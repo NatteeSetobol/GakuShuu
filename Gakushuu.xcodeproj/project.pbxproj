@@ -1,0 +1,682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		720C2B3C27B31870006F5985 /* database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 720C2B3B27B3186F006F5985 /* database.sqlite3 */; };
+		723710D927B5DA67008A679C /* KanjiCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 723710D827B5DA67008A679C /* KanjiCreation.m */; };
+		72437A1927BA0133003C6C11 /* StudyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72437A1827BA0133003C6C11 /* StudyView.m */; };
+		724BAB8B27C6D5BC001FFCE6 /* StudyFinished.m in Sources */ = {isa = PBXBuildFile; fileRef = 724BAB8A27C6D5BB001FFCE6 /* StudyFinished.m */; };
+		7253093727B455EF0076AFE4 /* DeckInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093627B455EF0076AFE4 /* DeckInfo.m */; };
+		7253093A27B48D4B0076AFE4 /* DeckEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093927B48D4B0076AFE4 /* DeckEdit.m */; };
+		72632C0C27B19D07007F21AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C0B27B19D07007F21AD /* AppDelegate.m */; };
+		72632C0F27B19D07007F21AD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C0E27B19D07007F21AD /* SceneDelegate.m */; };
+		72632C1527B19D07007F21AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72632C1327B19D07007F21AD /* Main.storyboard */; };
+		72632C1727B19D0D007F21AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72632C1627B19D0D007F21AD /* Assets.xcassets */; };
+		72632C1A27B19D0D007F21AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72632C1827B19D0D007F21AD /* LaunchScreen.storyboard */; };
+		72632C1D27B19D0D007F21AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C1C27B19D0D007F21AD /* main.m */; };
+		72632C2727B19D0E007F21AD /* GakushuuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C2627B19D0E007F21AD /* GakushuuTests.m */; };
+		72632C3127B19D0E007F21AD /* GakushuuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C3027B19D0E007F21AD /* GakushuuUITests.m */; };
+		72632C3327B19D0E007F21AD /* GakushuuUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C3227B19D0E007F21AD /* GakushuuUITestsLaunchTests.m */; };
+		728C827A27B1A02C00473BE7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827927B1A02C00473BE7 /* RootViewController.m */; };
+		728C827D27B1BEB900473BE7 /* DeckCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827C27B1BEB900473BE7 /* DeckCreation.m */; };
+		728C828027B1E54A00473BE7 /* sqlite3_helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827F27B1E54A00473BE7 /* sqlite3_helper.m */; };
+		728C828327B1E6FE00473BE7 /* KanjiDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C828227B1E6FE00473BE7 /* KanjiDatabase.m */; };
+		72B56CF727B7093F005B5C05 /* OptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B56CF627B7093F005B5C05 /* OptionView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72632C2327B19D0E007F21AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72632BFF27B19D07007F21AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72632C0627B19D07007F21AD;
+			remoteInfo = Gakushuu;
+		};
+		72632C2D27B19D0E007F21AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72632BFF27B19D07007F21AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72632C0627B19D07007F21AD;
+			remoteInfo = Gakushuu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		720C2B3B27B3186F006F5985 /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sqlite3; sourceTree = "<group>"; };
+		723710D727B5DA67008A679C /* KanjiCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KanjiCreation.h; sourceTree = "<group>"; };
+		723710D827B5DA67008A679C /* KanjiCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KanjiCreation.m; sourceTree = "<group>"; };
+		72437A1727BA0133003C6C11 /* StudyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyView.h; sourceTree = "<group>"; };
+		72437A1827BA0133003C6C11 /* StudyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyView.m; sourceTree = "<group>"; };
+		724BAB8927C6D5BB001FFCE6 /* StudyFinished.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyFinished.h; sourceTree = "<group>"; };
+		724BAB8A27C6D5BB001FFCE6 /* StudyFinished.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyFinished.m; sourceTree = "<group>"; };
+		7253093527B455EF0076AFE4 /* DeckInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckInfo.h; sourceTree = "<group>"; };
+		7253093627B455EF0076AFE4 /* DeckInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckInfo.m; sourceTree = "<group>"; };
+		7253093827B48D4B0076AFE4 /* DeckEdit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckEdit.h; sourceTree = "<group>"; };
+		7253093927B48D4B0076AFE4 /* DeckEdit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckEdit.m; sourceTree = "<group>"; };
+		72632C0727B19D07007F21AD /* Gakushuu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gakushuu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72632C0A27B19D07007F21AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		72632C0B27B19D07007F21AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		72632C0D27B19D07007F21AD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		72632C0E27B19D07007F21AD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		72632C1427B19D07007F21AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72632C1627B19D0D007F21AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72632C1927B19D0D007F21AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		72632C1B27B19D0D007F21AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72632C1C27B19D0D007F21AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		72632C2227B19D0E007F21AD /* GakushuuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GakushuuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72632C2627B19D0E007F21AD /* GakushuuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GakushuuTests.m; sourceTree = "<group>"; };
+		72632C2C27B19D0E007F21AD /* GakushuuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GakushuuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72632C3027B19D0E007F21AD /* GakushuuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GakushuuUITests.m; sourceTree = "<group>"; };
+		72632C3227B19D0E007F21AD /* GakushuuUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GakushuuUITestsLaunchTests.m; sourceTree = "<group>"; };
+		728C827827B1A02C00473BE7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../../Gakushuu/Gakushuu/RootViewController.h; sourceTree = "<group>"; };
+		728C827927B1A02C00473BE7 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../../Gakushuu/Gakushuu/RootViewController.m; sourceTree = "<group>"; };
+		728C827B27B1BEB900473BE7 /* DeckCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DeckCreation.h; path = ../../Gakushuu/Gakushuu/DeckCreation.h; sourceTree = "<group>"; };
+		728C827C27B1BEB900473BE7 /* DeckCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DeckCreation.m; path = ../../Gakushuu/Gakushuu/DeckCreation.m; sourceTree = "<group>"; };
+		728C827E27B1E54A00473BE7 /* sqlite3_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3_helper.h; sourceTree = "<group>"; };
+		728C827F27B1E54A00473BE7 /* sqlite3_helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sqlite3_helper.m; sourceTree = "<group>"; };
+		728C828127B1E6FE00473BE7 /* KanjiDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KanjiDatabase.h; path = ../../Gakushuu/Gakushuu/KanjiDatabase.h; sourceTree = "<group>"; };
+		728C828227B1E6FE00473BE7 /* KanjiDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KanjiDatabase.m; path = ../../Gakushuu/Gakushuu/KanjiDatabase.m; sourceTree = "<group>"; };
+		72B56CF527B7093F005B5C05 /* OptionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionView.h; sourceTree = "<group>"; };
+		72B56CF627B7093F005B5C05 /* OptionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72632C0427B19D07007F21AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72632C1F27B19D0E007F21AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72632C2927B19D0E007F21AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72632BFE27B19D07007F21AD = {
+			isa = PBXGroup;
+			children = (
+				72632C0927B19D07007F21AD /* Gakushuu */,
+				72632C2527B19D0E007F21AD /* GakushuuTests */,
+				72632C2F27B19D0E007F21AD /* GakushuuUITests */,
+				72632C0827B19D07007F21AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		72632C0827B19D07007F21AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72632C0727B19D07007F21AD /* Gakushuu.app */,
+				72632C2227B19D0E007F21AD /* GakushuuTests.xctest */,
+				72632C2C27B19D0E007F21AD /* GakushuuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72632C0927B19D07007F21AD /* Gakushuu */ = {
+			isa = PBXGroup;
+			children = (
+				720C2B3B27B3186F006F5985 /* database.sqlite3 */,
+				728C827E27B1E54A00473BE7 /* sqlite3_helper.h */,
+				728C827F27B1E54A00473BE7 /* sqlite3_helper.m */,
+				72632C0A27B19D07007F21AD /* AppDelegate.h */,
+				72632C0B27B19D07007F21AD /* AppDelegate.m */,
+				72632C0D27B19D07007F21AD /* SceneDelegate.h */,
+				72632C0E27B19D07007F21AD /* SceneDelegate.m */,
+				7253093527B455EF0076AFE4 /* DeckInfo.h */,
+				7253093627B455EF0076AFE4 /* DeckInfo.m */,
+				728C827827B1A02C00473BE7 /* RootViewController.h */,
+				728C827927B1A02C00473BE7 /* RootViewController.m */,
+				728C827B27B1BEB900473BE7 /* DeckCreation.h */,
+				728C827C27B1BEB900473BE7 /* DeckCreation.m */,
+				728C828127B1E6FE00473BE7 /* KanjiDatabase.h */,
+				728C828227B1E6FE00473BE7 /* KanjiDatabase.m */,
+				7253093827B48D4B0076AFE4 /* DeckEdit.h */,
+				7253093927B48D4B0076AFE4 /* DeckEdit.m */,
+				723710D727B5DA67008A679C /* KanjiCreation.h */,
+				723710D827B5DA67008A679C /* KanjiCreation.m */,
+				72B56CF527B7093F005B5C05 /* OptionView.h */,
+				72B56CF627B7093F005B5C05 /* OptionView.m */,
+				724BAB8927C6D5BB001FFCE6 /* StudyFinished.h */,
+				724BAB8A27C6D5BB001FFCE6 /* StudyFinished.m */,
+				72437A1727BA0133003C6C11 /* StudyView.h */,
+				72437A1827BA0133003C6C11 /* StudyView.m */,
+				72632C1327B19D07007F21AD /* Main.storyboard */,
+				72632C1627B19D0D007F21AD /* Assets.xcassets */,
+				72632C1B27B19D0D007F21AD /* Info.plist */,
+				72632C1C27B19D0D007F21AD /* main.m */,
+				72632C1827B19D0D007F21AD /* LaunchScreen.storyboard */,
+			);
+			path = Gakushuu;
+			sourceTree = "<group>";
+		};
+		72632C2527B19D0E007F21AD /* GakushuuTests */ = {
+			isa = PBXGroup;
+			children = (
+				72632C2627B19D0E007F21AD /* GakushuuTests.m */,
+			);
+			path = GakushuuTests;
+			sourceTree = "<group>";
+		};
+		72632C2F27B19D0E007F21AD /* GakushuuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				72632C3027B19D0E007F21AD /* GakushuuUITests.m */,
+				72632C3227B19D0E007F21AD /* GakushuuUITestsLaunchTests.m */,
+			);
+			path = GakushuuUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72632C0627B19D07007F21AD /* Gakushuu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72632C3627B19D0E007F21AD /* Build configuration list for PBXNativeTarget "Gakushuu" */;
+			buildPhases = (
+				72632C0327B19D07007F21AD /* Sources */,
+				72632C0427B19D07007F21AD /* Frameworks */,
+				72632C0527B19D07007F21AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gakushuu;
+			productName = Gakushuu;
+			productReference = 72632C0727B19D07007F21AD /* Gakushuu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		72632C2127B19D0E007F21AD /* GakushuuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72632C3927B19D0E007F21AD /* Build configuration list for PBXNativeTarget "GakushuuTests" */;
+			buildPhases = (
+				72632C1E27B19D0E007F21AD /* Sources */,
+				72632C1F27B19D0E007F21AD /* Frameworks */,
+				72632C2027B19D0E007F21AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72632C2427B19D0E007F21AD /* PBXTargetDependency */,
+			);
+			name = GakushuuTests;
+			productName = GakushuuTests;
+			productReference = 72632C2227B19D0E007F21AD /* GakushuuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		72632C2B27B19D0E007F21AD /* GakushuuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72632C3C27B19D0E007F21AD /* Build configuration list for PBXNativeTarget "GakushuuUITests" */;
+			buildPhases = (
+				72632C2827B19D0E007F21AD /* Sources */,
+				72632C2927B19D0E007F21AD /* Frameworks */,
+				72632C2A27B19D0E007F21AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72632C2E27B19D0E007F21AD /* PBXTargetDependency */,
+			);
+			name = GakushuuUITests;
+			productName = GakushuuUITests;
+			productReference = 72632C2C27B19D0E007F21AD /* GakushuuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72632BFF27B19D07007F21AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					72632C0627B19D07007F21AD = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					72632C2127B19D0E007F21AD = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 72632C0627B19D07007F21AD;
+					};
+					72632C2B27B19D0E007F21AD = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 72632C0627B19D07007F21AD;
+					};
+				};
+			};
+			buildConfigurationList = 72632C0227B19D07007F21AD /* Build configuration list for PBXProject "Gakushuu" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 72632BFE27B19D07007F21AD;
+			productRefGroup = 72632C0827B19D07007F21AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72632C0627B19D07007F21AD /* Gakushuu */,
+				72632C2127B19D0E007F21AD /* GakushuuTests */,
+				72632C2B27B19D0E007F21AD /* GakushuuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72632C0527B19D07007F21AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720C2B3C27B31870006F5985 /* database.sqlite3 in Resources */,
+				72632C1A27B19D0D007F21AD /* LaunchScreen.storyboard in Resources */,
+				72632C1727B19D0D007F21AD /* Assets.xcassets in Resources */,
+				72632C1527B19D07007F21AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72632C2027B19D0E007F21AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72632C2A27B19D0E007F21AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72632C0327B19D07007F21AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7253093727B455EF0076AFE4 /* DeckInfo.m in Sources */,
+				72632C0C27B19D07007F21AD /* AppDelegate.m in Sources */,
+				723710D927B5DA67008A679C /* KanjiCreation.m in Sources */,
+				72B56CF727B7093F005B5C05 /* OptionView.m in Sources */,
+				72632C1D27B19D0D007F21AD /* main.m in Sources */,
+				7253093A27B48D4B0076AFE4 /* DeckEdit.m in Sources */,
+				72437A1927BA0133003C6C11 /* StudyView.m in Sources */,
+				728C827D27B1BEB900473BE7 /* DeckCreation.m in Sources */,
+				728C828027B1E54A00473BE7 /* sqlite3_helper.m in Sources */,
+				728C827A27B1A02C00473BE7 /* RootViewController.m in Sources */,
+				724BAB8B27C6D5BC001FFCE6 /* StudyFinished.m in Sources */,
+				728C828327B1E6FE00473BE7 /* KanjiDatabase.m in Sources */,
+				72632C0F27B19D07007F21AD /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72632C1E27B19D0E007F21AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72632C2727B19D0E007F21AD /* GakushuuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72632C2827B19D0E007F21AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72632C3127B19D0E007F21AD /* GakushuuUITests.m in Sources */,
+				72632C3327B19D0E007F21AD /* GakushuuUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72632C2427B19D0E007F21AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72632C0627B19D07007F21AD /* Gakushuu */;
+			targetProxy = 72632C2327B19D0E007F21AD /* PBXContainerItemProxy */;
+		};
+		72632C2E27B19D0E007F21AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72632C0627B19D07007F21AD /* Gakushuu */;
+			targetProxy = 72632C2D27B19D0E007F21AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		72632C1327B19D07007F21AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72632C1427B19D07007F21AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		72632C1827B19D0D007F21AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72632C1927B19D0D007F21AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		72632C3427B19D0E007F21AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		72632C3527B19D0E007F21AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		72632C3727B19D0E007F21AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AK4K36PVDL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gakushuu/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nomication.Gakushuu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		72632C3827B19D0E007F21AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AK4K36PVDL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gakushuu/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nomication.Gakushuu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		72632C3A27B19D0E007F21AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AK4K36PVDL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nomication.GakushuuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gakushuu.app/Gakushuu";
+			};
+			name = Debug;
+		};
+		72632C3B27B19D0E007F21AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AK4K36PVDL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nomication.GakushuuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gakushuu.app/Gakushuu";
+			};
+			name = Release;
+		};
+		72632C3D27B19D0E007F21AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AK4K36PVDL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nomication.GakushuuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gakushuu;
+			};
+			name = Debug;
+		};
+		72632C3E27B19D0E007F21AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AK4K36PVDL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nomication.GakushuuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gakushuu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72632C0227B19D07007F21AD /* Build configuration list for PBXProject "Gakushuu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72632C3427B19D0E007F21AD /* Debug */,
+				72632C3527B19D0E007F21AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72632C3627B19D0E007F21AD /* Build configuration list for PBXNativeTarget "Gakushuu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72632C3727B19D0E007F21AD /* Debug */,
+				72632C3827B19D0E007F21AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72632C3927B19D0E007F21AD /* Build configuration list for PBXNativeTarget "GakushuuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72632C3A27B19D0E007F21AD /* Debug */,
+				72632C3B27B19D0E007F21AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72632C3C27B19D0E007F21AD /* Build configuration list for PBXNativeTarget "GakushuuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72632C3D27B19D0E007F21AD /* Debug */,
+				72632C3E27B19D0E007F21AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72632BFF27B19D07007F21AD /* Project object */;
+}
