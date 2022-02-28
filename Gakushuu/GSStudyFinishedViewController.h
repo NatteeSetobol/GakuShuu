@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface StudyFinished : UIViewController
+@interface GSStudyFinishedViewController : UIViewController
 
 @end
 

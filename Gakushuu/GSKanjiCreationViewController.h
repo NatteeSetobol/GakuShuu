@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KanjiCreation : UIViewController
+@interface GSKanjiCreationViewController : UIViewController
 {
     @public int DeckId;
 }

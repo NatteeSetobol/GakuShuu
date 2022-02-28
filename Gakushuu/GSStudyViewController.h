@@ -7,11 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import "KanjiDatabase.h"
-#import "StudyFinished.h"
+#import "GSStudyFinishedViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface StudyView : UIViewController <UIGestureRecognizerDelegate>
+@interface GSStudyViewController : UIViewController <UIGestureRecognizerDelegate>
 {
     @public int DeckId;
     UITapGestureRecognizer *doubleTapAction;

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 enum { DECK_OPTIONS };
 
-@interface OptionView : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface GSOptionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableArray *OptionArray;
     KanjiDatabase *KDatabase;

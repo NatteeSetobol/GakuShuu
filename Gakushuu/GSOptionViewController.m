@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/11/22.
 //
 
-#import "OptionView.h"
+#import "GSOptionViewController.h"
 
-@interface OptionView ()
+@interface GSOptionViewController ()
 
 @end
 
-@implementation OptionView
+@implementation GSOptionViewController
 
 @synthesize  OptionArray, KDatabase;
 

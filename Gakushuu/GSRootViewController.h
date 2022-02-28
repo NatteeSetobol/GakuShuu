@@ -6,14 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DeckCreation.h"
-#import "DeckInfo.h"
+#import "GSDeckCreationViewController.h"
+#import "GSDeckInfoViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 #define DECK_TABLE_MARGIN 235
 
-@interface RootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface GSRootViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSMutableArray* Decks;
 }
@@ -23,8 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *AddDeckButton;
 @property (strong, nonatomic) IBOutlet UITabBar *ToolBar;
 
--(void) RefreshDeckTable;
--(void) DeckCreationDismissed;
+-(void) refreshDeckTable;
+-(void) dismissedDeckCreation;
 
 @end
 

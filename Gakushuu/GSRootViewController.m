@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/7/22.
 //
 
-#import "RootViewController.h"
+#import "GSRootViewController.h"
 
-@interface RootViewController ()
+@interface GSRootViewController ()
 
 @end
 
-@implementation RootViewController
+@implementation GSRootViewController
 
 @synthesize Decks;
 
@@ -20,7 +20,7 @@
     _DeckTable.delegate = self;
     _DeckTable.dataSource = self;
     _AddDeckButton.target = self;
-    _AddDeckButton.action = @selector(AddDeck:);
+    _AddDeckButton.action = @selector(addDeck:);
     
     CGRect frame = _DeckTable.frame;
     frame.size.height = _DeckTable.frame.size.height - _ToolBar.frame.size.height - DECK_TABLE_MARGIN ;
@@ -30,33 +30,30 @@
 
  - (void)viewWillAppear:(BOOL)animated
 {
-    [self RefreshDeckTable];
+    [self refreshDeckTable];
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    NSLog(@"will did appear");
 
 }
 
--(void) RefreshDeckTable
+-(void) refreshDeckTable
 {
     KanjiDatabase *KanjiDatabaseIns = NULL;
     KanjiDatabaseIns = [KanjiDatabase GetInstance];
 
     Decks = [KanjiDatabaseIns GetAllDecks];
     
-    NSLog(@"%lu", [self.Decks count]);
-
     [_DeckTable reloadData];
     
    
 }
 
--(IBAction) AddDeck: (id) object
+-(IBAction) addDeck: (id) object
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    DeckCreation* DeckCreationView = [storyboard instantiateViewControllerWithIdentifier:@"DeckCreation"];
+    GSDeckCreationViewController* DeckCreationView = [storyboard instantiateViewControllerWithIdentifier:@"DeckCreation"];
     
     
     DeckCreationView.modalPresentationStyle = UIModalPresentationPopover;
@@ -66,15 +63,15 @@
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
-     selector:@selector(DeckCreationDismissed  )
+     selector:@selector(dismissedDeckCreation  )
      name:@"DeckCreationDismissed"
      object:nil];
 }
 
 
--(void) DeckCreationDismissed
+-(void) dismissedDeckCreation
 {
-    [self RefreshDeckTable];
+    [self refreshDeckTable];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 // NOTES(): TABLE DELEGATIONS -============
@@ -117,7 +114,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    DeckInfo* DeckInfoView = [storyboard instantiateViewControllerWithIdentifier:@"DeckInfo"];
+    GSDeckInfoViewController* DeckInfoView = [storyboard instantiateViewControllerWithIdentifier:@"DeckInfo"];
         
     NSMutableDictionary *DeckRow = [Decks objectAtIndex:indexPath.row];
     NSNumber *DeckID = [DeckRow objectForKey:@"id"];

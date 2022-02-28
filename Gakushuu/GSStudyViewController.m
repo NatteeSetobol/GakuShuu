@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/13/22.
 //
 
-#import "StudyView.h"
+#import "GSStudyViewController.h"
 
-@interface StudyView ()
+@interface GSStudyViewController ()
 
 @end
 
-@implementation StudyView
+@implementation GSStudyViewController
 
 @synthesize doubleTapAction,KanjisDueDeck,Options;
 
@@ -302,7 +302,7 @@
 -(void) ShowFinishedView
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    StudyFinished* StudyFinishedView = [storyboard instantiateViewControllerWithIdentifier:@"StudyFinished"];
+    GSStudyFinishedViewController* StudyFinishedView = [storyboard instantiateViewControllerWithIdentifier:@"StudyFinished"];
     
     
     StudyFinishedView.modalPresentationStyle = UIModalPresentationPopover;

@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		720C2B3C27B31870006F5985 /* database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 720C2B3B27B3186F006F5985 /* database.sqlite3 */; };
-		723710D927B5DA67008A679C /* KanjiCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 723710D827B5DA67008A679C /* KanjiCreation.m */; };
-		72437A1927BA0133003C6C11 /* StudyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72437A1827BA0133003C6C11 /* StudyView.m */; };
-		724BAB8B27C6D5BC001FFCE6 /* StudyFinished.m in Sources */ = {isa = PBXBuildFile; fileRef = 724BAB8A27C6D5BB001FFCE6 /* StudyFinished.m */; };
-		7253093727B455EF0076AFE4 /* DeckInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093627B455EF0076AFE4 /* DeckInfo.m */; };
-		7253093A27B48D4B0076AFE4 /* DeckEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093927B48D4B0076AFE4 /* DeckEdit.m */; };
+		723710D927B5DA67008A679C /* GSKanjiCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */; };
+		72437A1927BA0133003C6C11 /* GSStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72437A1827BA0133003C6C11 /* GSStudyViewController.m */; };
+		724BAB8B27C6D5BC001FFCE6 /* GSStudyFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewController.m */; };
+		7253093727B455EF0076AFE4 /* GSDeckInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093627B455EF0076AFE4 /* GSDeckInfoViewController.m */; };
+		7253093A27B48D4B0076AFE4 /* GSDeckEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093927B48D4B0076AFE4 /* GSDeckEditViewController.m */; };
 		72632C0C27B19D07007F21AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C0B27B19D07007F21AD /* AppDelegate.m */; };
 		72632C0F27B19D07007F21AD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C0E27B19D07007F21AD /* SceneDelegate.m */; };
 		72632C1527B19D07007F21AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72632C1327B19D07007F21AD /* Main.storyboard */; };
@@ -22,11 +22,11 @@
 		72632C2727B19D0E007F21AD /* GakushuuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C2627B19D0E007F21AD /* GakushuuTests.m */; };
 		72632C3127B19D0E007F21AD /* GakushuuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C3027B19D0E007F21AD /* GakushuuUITests.m */; };
 		72632C3327B19D0E007F21AD /* GakushuuUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C3227B19D0E007F21AD /* GakushuuUITestsLaunchTests.m */; };
-		728C827A27B1A02C00473BE7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827927B1A02C00473BE7 /* RootViewController.m */; };
-		728C827D27B1BEB900473BE7 /* DeckCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827C27B1BEB900473BE7 /* DeckCreation.m */; };
+		728C827A27B1A02C00473BE7 /* GSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827927B1A02C00473BE7 /* GSRootViewController.m */; };
+		728C827D27B1BEB900473BE7 /* GSDeckCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827C27B1BEB900473BE7 /* GSDeckCreationViewController.m */; };
 		728C828027B1E54A00473BE7 /* sqlite3_helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827F27B1E54A00473BE7 /* sqlite3_helper.m */; };
 		728C828327B1E6FE00473BE7 /* KanjiDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C828227B1E6FE00473BE7 /* KanjiDatabase.m */; };
-		72B56CF727B7093F005B5C05 /* OptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B56CF627B7093F005B5C05 /* OptionView.m */; };
+		72B56CF727B7093F005B5C05 /* GSOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B56CF627B7093F005B5C05 /* GSOptionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,16 +48,16 @@
 
 /* Begin PBXFileReference section */
 		720C2B3B27B3186F006F5985 /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sqlite3; sourceTree = "<group>"; };
-		723710D727B5DA67008A679C /* KanjiCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KanjiCreation.h; sourceTree = "<group>"; };
-		723710D827B5DA67008A679C /* KanjiCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KanjiCreation.m; sourceTree = "<group>"; };
-		72437A1727BA0133003C6C11 /* StudyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyView.h; sourceTree = "<group>"; };
-		72437A1827BA0133003C6C11 /* StudyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyView.m; sourceTree = "<group>"; };
-		724BAB8927C6D5BB001FFCE6 /* StudyFinished.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyFinished.h; sourceTree = "<group>"; };
-		724BAB8A27C6D5BB001FFCE6 /* StudyFinished.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyFinished.m; sourceTree = "<group>"; };
-		7253093527B455EF0076AFE4 /* DeckInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckInfo.h; sourceTree = "<group>"; };
-		7253093627B455EF0076AFE4 /* DeckInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckInfo.m; sourceTree = "<group>"; };
-		7253093827B48D4B0076AFE4 /* DeckEdit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckEdit.h; sourceTree = "<group>"; };
-		7253093927B48D4B0076AFE4 /* DeckEdit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckEdit.m; sourceTree = "<group>"; };
+		723710D727B5DA67008A679C /* GSKanjiCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSKanjiCreationViewController.h; sourceTree = "<group>"; };
+		723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSKanjiCreationViewController.m; sourceTree = "<group>"; };
+		72437A1727BA0133003C6C11 /* GSStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSStudyViewController.h; sourceTree = "<group>"; };
+		72437A1827BA0133003C6C11 /* GSStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSStudyViewController.m; sourceTree = "<group>"; };
+		724BAB8927C6D5BB001FFCE6 /* GSStudyFinishedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSStudyFinishedViewController.h; sourceTree = "<group>"; };
+		724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSStudyFinishedViewController.m; sourceTree = "<group>"; };
+		7253093527B455EF0076AFE4 /* GSDeckInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeckInfoViewController.h; sourceTree = "<group>"; };
+		7253093627B455EF0076AFE4 /* GSDeckInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeckInfoViewController.m; sourceTree = "<group>"; };
+		7253093827B48D4B0076AFE4 /* GSDeckEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeckEditViewController.h; sourceTree = "<group>"; };
+		7253093927B48D4B0076AFE4 /* GSDeckEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeckEditViewController.m; sourceTree = "<group>"; };
 		72632C0727B19D07007F21AD /* Gakushuu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gakushuu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72632C0A27B19D07007F21AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72632C0B27B19D07007F21AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,16 +73,16 @@
 		72632C2C27B19D0E007F21AD /* GakushuuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GakushuuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72632C3027B19D0E007F21AD /* GakushuuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GakushuuUITests.m; sourceTree = "<group>"; };
 		72632C3227B19D0E007F21AD /* GakushuuUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GakushuuUITestsLaunchTests.m; sourceTree = "<group>"; };
-		728C827827B1A02C00473BE7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../../Gakushuu/Gakushuu/RootViewController.h; sourceTree = "<group>"; };
-		728C827927B1A02C00473BE7 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../../Gakushuu/Gakushuu/RootViewController.m; sourceTree = "<group>"; };
-		728C827B27B1BEB900473BE7 /* DeckCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DeckCreation.h; path = ../../Gakushuu/Gakushuu/DeckCreation.h; sourceTree = "<group>"; };
-		728C827C27B1BEB900473BE7 /* DeckCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DeckCreation.m; path = ../../Gakushuu/Gakushuu/DeckCreation.m; sourceTree = "<group>"; };
+		728C827827B1A02C00473BE7 /* GSRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSRootViewController.h; sourceTree = "<group>"; };
+		728C827927B1A02C00473BE7 /* GSRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSRootViewController.m; sourceTree = "<group>"; };
+		728C827B27B1BEB900473BE7 /* GSDeckCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeckCreationViewController.h; sourceTree = "<group>"; };
+		728C827C27B1BEB900473BE7 /* GSDeckCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeckCreationViewController.m; sourceTree = "<group>"; };
 		728C827E27B1E54A00473BE7 /* sqlite3_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3_helper.h; sourceTree = "<group>"; };
 		728C827F27B1E54A00473BE7 /* sqlite3_helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sqlite3_helper.m; sourceTree = "<group>"; };
 		728C828127B1E6FE00473BE7 /* KanjiDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KanjiDatabase.h; path = ../../Gakushuu/Gakushuu/KanjiDatabase.h; sourceTree = "<group>"; };
 		728C828227B1E6FE00473BE7 /* KanjiDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KanjiDatabase.m; path = ../../Gakushuu/Gakushuu/KanjiDatabase.m; sourceTree = "<group>"; };
-		72B56CF527B7093F005B5C05 /* OptionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionView.h; sourceTree = "<group>"; };
-		72B56CF627B7093F005B5C05 /* OptionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionView.m; sourceTree = "<group>"; };
+		72B56CF527B7093F005B5C05 /* GSOptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSOptionViewController.h; sourceTree = "<group>"; };
+		72B56CF627B7093F005B5C05 /* GSOptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSOptionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,24 +140,24 @@
 				72632C0B27B19D07007F21AD /* AppDelegate.m */,
 				72632C0D27B19D07007F21AD /* SceneDelegate.h */,
 				72632C0E27B19D07007F21AD /* SceneDelegate.m */,
-				7253093527B455EF0076AFE4 /* DeckInfo.h */,
-				7253093627B455EF0076AFE4 /* DeckInfo.m */,
-				728C827827B1A02C00473BE7 /* RootViewController.h */,
-				728C827927B1A02C00473BE7 /* RootViewController.m */,
-				728C827B27B1BEB900473BE7 /* DeckCreation.h */,
-				728C827C27B1BEB900473BE7 /* DeckCreation.m */,
+				7253093527B455EF0076AFE4 /* GSDeckInfoViewController.h */,
+				7253093627B455EF0076AFE4 /* GSDeckInfoViewController.m */,
+				728C827827B1A02C00473BE7 /* GSRootViewController.h */,
+				728C827927B1A02C00473BE7 /* GSRootViewController.m */,
+				728C827B27B1BEB900473BE7 /* GSDeckCreationViewController.h */,
+				728C827C27B1BEB900473BE7 /* GSDeckCreationViewController.m */,
 				728C828127B1E6FE00473BE7 /* KanjiDatabase.h */,
 				728C828227B1E6FE00473BE7 /* KanjiDatabase.m */,
-				7253093827B48D4B0076AFE4 /* DeckEdit.h */,
-				7253093927B48D4B0076AFE4 /* DeckEdit.m */,
-				723710D727B5DA67008A679C /* KanjiCreation.h */,
-				723710D827B5DA67008A679C /* KanjiCreation.m */,
-				72B56CF527B7093F005B5C05 /* OptionView.h */,
-				72B56CF627B7093F005B5C05 /* OptionView.m */,
-				724BAB8927C6D5BB001FFCE6 /* StudyFinished.h */,
-				724BAB8A27C6D5BB001FFCE6 /* StudyFinished.m */,
-				72437A1727BA0133003C6C11 /* StudyView.h */,
-				72437A1827BA0133003C6C11 /* StudyView.m */,
+				7253093827B48D4B0076AFE4 /* GSDeckEditViewController.h */,
+				7253093927B48D4B0076AFE4 /* GSDeckEditViewController.m */,
+				723710D727B5DA67008A679C /* GSKanjiCreationViewController.h */,
+				723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */,
+				72B56CF527B7093F005B5C05 /* GSOptionViewController.h */,
+				72B56CF627B7093F005B5C05 /* GSOptionViewController.m */,
+				724BAB8927C6D5BB001FFCE6 /* GSStudyFinishedViewController.h */,
+				724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewController.m */,
+				72437A1727BA0133003C6C11 /* GSStudyViewController.h */,
+				72437A1827BA0133003C6C11 /* GSStudyViewController.m */,
 				72632C1327B19D07007F21AD /* Main.storyboard */,
 				72632C1627B19D0D007F21AD /* Assets.xcassets */,
 				72632C1B27B19D0D007F21AD /* Info.plist */,
@@ -315,17 +315,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7253093727B455EF0076AFE4 /* DeckInfo.m in Sources */,
+				7253093727B455EF0076AFE4 /* GSDeckInfoViewController.m in Sources */,
 				72632C0C27B19D07007F21AD /* AppDelegate.m in Sources */,
-				723710D927B5DA67008A679C /* KanjiCreation.m in Sources */,
-				72B56CF727B7093F005B5C05 /* OptionView.m in Sources */,
+				723710D927B5DA67008A679C /* GSKanjiCreationViewController.m in Sources */,
+				72B56CF727B7093F005B5C05 /* GSOptionViewController.m in Sources */,
 				72632C1D27B19D0D007F21AD /* main.m in Sources */,
-				7253093A27B48D4B0076AFE4 /* DeckEdit.m in Sources */,
-				72437A1927BA0133003C6C11 /* StudyView.m in Sources */,
-				728C827D27B1BEB900473BE7 /* DeckCreation.m in Sources */,
+				7253093A27B48D4B0076AFE4 /* GSDeckEditViewController.m in Sources */,
+				72437A1927BA0133003C6C11 /* GSStudyViewController.m in Sources */,
+				728C827D27B1BEB900473BE7 /* GSDeckCreationViewController.m in Sources */,
 				728C828027B1E54A00473BE7 /* sqlite3_helper.m in Sources */,
-				728C827A27B1A02C00473BE7 /* RootViewController.m in Sources */,
-				724BAB8B27C6D5BC001FFCE6 /* StudyFinished.m in Sources */,
+				728C827A27B1A02C00473BE7 /* GSRootViewController.m in Sources */,
+				724BAB8B27C6D5BC001FFCE6 /* GSStudyFinishedViewController.m in Sources */,
 				728C828327B1E6FE00473BE7 /* KanjiDatabase.m in Sources */,
 				72632C0F27B19D07007F21AD /* SceneDelegate.m in Sources */,
 			);

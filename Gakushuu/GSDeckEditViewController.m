@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/9/22.
 //
 
-#import "DeckEdit.h"
+#import "GSDeckEditViewController.h"
 
-@interface DeckEdit ()
+@interface GSDeckEditViewController ()
 
 @end
 
-@implementation DeckEdit
+@implementation GSDeckEditViewController
 
 @synthesize CardTable,Cards,KanjiCreationButton;
 
@@ -35,7 +35,7 @@
 -(IBAction) KanjiNewCreation: (id) sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    KanjiCreation* KanjiCreationView = [storyboard instantiateViewControllerWithIdentifier:@"KanjiCreation"];
+    GSKanjiCreationViewController* KanjiCreationView = [storyboard instantiateViewControllerWithIdentifier:@"KanjiCreation"];
     
     KanjiCreationView->DeckId = DeckId;
     

@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/10/22.
 //
 
-#import "KanjiCreation.h"
+#import "GSKanjiCreationViewController.h"
 
-@interface KanjiCreation ()
+@interface GSKanjiCreationViewController ()
 
 @end
 
-@implementation KanjiCreation
+@implementation GSKanjiCreationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

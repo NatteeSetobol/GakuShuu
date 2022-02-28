@@ -7,13 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import "KanjiDatabase.h"
-#import "DeckEdit.h"
-#import "OptionView.h"
-#import "StudyView.h"
+#import "GSDeckEditViewController.h"
+#import "GSOptionViewController.h"
+#import "GSStudyViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DeckInfo : UIViewController
+@interface GSDeckInfoViewController : UIViewController
 {
    
     NSMutableArray *Deck;
@@ -26,8 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSMutableArray *Deck;
 @property (strong, nonatomic) IBOutlet UIButton *Study;
 
-- (IBAction)ShowOptions:(id)sender;
-- (IBAction) StudyKanji: (id) sender;
+- (IBAction)showOptions:(id)sender;
+- (IBAction) studyKanji: (id) sender;
 
 
 @end

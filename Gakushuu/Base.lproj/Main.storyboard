@@ -27,7 +27,7 @@
         <!--Decks-->
         <scene sceneID="4Hr-0U-dxx">
             <objects>
-                <viewController storyboardIdentifier="RootController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ER2-1Q-76d" customClass="RootViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ER2-1Q-76d" customClass="GSRootViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HAx-OF-l6R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="200.00000000000003" y="125.89285714285714"/>
         </scene>
-        <!--Option View-->
+        <!--Option View Controller-->
         <scene sceneID="aJo-c2-Jly">
             <objects>
-                <viewController storyboardIdentifier="OptionView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aJI-Jq-MRd" customClass="OptionView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OptionView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aJI-Jq-MRd" customClass="GSOptionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rtN-vI-Bhe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-1426.0869565217392" y="853.79464285714278"/>
         </scene>
-        <!--Deck Info-->
+        <!--Deck Info View Controller-->
         <scene sceneID="zkg-zV-SL2">
             <objects>
-                <viewController storyboardIdentifier="DeckInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vwu-zc-6Vm" customClass="DeckInfo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeckInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vwu-zc-6Vm" customClass="GSDeckInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W7c-rX-a6F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Deck Options"/>
                                 <connections>
-                                    <action selector="ShowOptions:" destination="Vwu-zc-6Vm" eventType="touchUpInside" id="sfc-dd-jSp"/>
+                                    <action selector="showOptions:" destination="Vwu-zc-6Vm" eventType="touchUpInside" id="tlh-Bp-DR9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOC-Iu-a85">
@@ -143,7 +143,7 @@
         <!--cards-->
         <scene sceneID="pZu-jp-o9J">
             <objects>
-                <viewController storyboardIdentifier="DeckEdit" title="cards" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gh4-j6-geP" customClass="DeckEdit" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeckEdit" title="cards" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gh4-j6-geP" customClass="GSDeckEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="63Z-bP-4hW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="434.78260869565219" y="959.59821428571422"/>
         </scene>
-        <!--Kanji Creation-->
+        <!--Kanji Creation View Controller-->
         <scene sceneID="1am-xO-wOV">
             <objects>
-                <viewController storyboardIdentifier="KanjiCreation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aLT-VC-SJZ" customClass="KanjiCreation" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KanjiCreation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aLT-VC-SJZ" customClass="GSKanjiCreationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ag-wq-FDV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="1376.8115942028987" y="986.38392857142856"/>
         </scene>
-        <!--Deck Creation-->
+        <!--Deck Creation View Controller-->
         <scene sceneID="r64-NI-MsM">
             <objects>
-                <viewController storyboardIdentifier="DeckCreation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Btg-q6-OIj" customClass="DeckCreation" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeckCreation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Btg-q6-OIj" customClass="GSDeckCreationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2yr-NB-Kvu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -380,7 +380,7 @@
         <!--Study-->
         <scene sceneID="BIB-ks-KPn">
             <objects>
-                <viewController storyboardIdentifier="StudyViewController" title="Study" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DYG-Jd-nwa" customClass="StudyView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudyViewController" title="Study" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DYG-Jd-nwa" customClass="GSStudyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nUW-9f-uRw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -523,10 +523,10 @@
             </objects>
             <point key="canvasLocation" x="2390.625" y="101.40845070422536"/>
         </scene>
-        <!--Study Finished-->
+        <!--Study Finished View Controller-->
         <scene sceneID="zFu-5P-He3">
             <objects>
-                <viewController storyboardIdentifier="StudyFinished" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ggK-5F-XcC" customClass="StudyFinished" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudyFinished" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ggK-5F-XcC" customClass="GSStudyFinishedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Nt-QS-h8C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

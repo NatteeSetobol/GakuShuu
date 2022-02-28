@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/7/22.
 //
 
-#import "DeckCreation.h"
+#import "GSDeckCreationViewController.h"
 
-@interface DeckCreation ()
+@interface GSDeckCreationViewController ()
 
 @end
 
-@implementation DeckCreation
+@implementation GSDeckCreationViewController
 @synthesize selectionCallback;
 
 - (void)viewDidLoad {

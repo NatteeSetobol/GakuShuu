@@ -7,12 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "KanjiDatabase.h"
-#import "KanjiCreation.h"
-#import "OptionView.h"
+#import "GSKanjiCreationViewController.h"
+#import "GSOptionViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DeckEdit : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface GSDeckEditViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *CardTable;
     NSMutableArray *Cards;
