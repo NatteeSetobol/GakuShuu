@@ -13,7 +13,7 @@
 
 @implementation GSStudyViewController
 
-@synthesize doubleTapAction,KanjisDueDeck,Options;
+@synthesize doubleTapAction,KanjisDueDeck,Options,totalTime, currentTime,sessionTimer, Timer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,6 +58,10 @@
     Options = [OptionArray objectAtIndex:0];
     
     KanjiLimit = (NSNumber*)[Options objectForKey:@"kanjiperday"];
+    totalTime  = (NSNumber*)[Options objectForKey:@"timerinmin"];
+    
+    
+   // [_Timer setText:[NSString stringWithFormat:@"%@:00", totalTime]];
     
     /*
         1. Get the deck due date from card
@@ -97,7 +101,6 @@
         [KanjiDatabaseIns UpdateDeckDueDate: DeckId DueDate: TomarrowString];
 
     } else {
-
         
         dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -135,6 +138,8 @@
     } else {
         [self ShowFinishedView];
     }
+    
+    sessionTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerEnd:) userInfo:nil repeats:true];
 }
 
 -(void) SetNextKanji: (NSMutableDictionary*) KanjiInfo
@@ -287,16 +292,22 @@
         
         if ([KanjisDueDeck count] > 0)
         {
-            NSMutableDictionary *NextKanjiInfo = NULL;
-            NextKanjiInfo = [KanjisDueDeck objectAtIndex:0];
+            if ([totalTime intValue] != 0)
+            {
+                NSMutableDictionary *NextKanjiInfo = NULL;
+                NextKanjiInfo = [KanjisDueDeck objectAtIndex:0];
         
-            [self SetNextKanji: NextKanjiInfo ];
+                [self SetNextKanji: NextKanjiInfo ];
         
-            [self HideAnswer];
+                [self HideAnswer];
+            }
         } else {
             [self ShowFinishedView];
         }
     }
+    
+
+
 }
 
 -(void) ShowFinishedView
@@ -367,6 +378,47 @@
     [self.view removeGestureRecognizer:doubleTapAction];
     
     return self;
+}
+
+-(void)timerEnd:(NSTimer *)timer {
+    int mins = 0;
+    float secs = 0;
+    float remainingTime = 0.0f;
+
+    currentTime = [NSNumber numberWithFloat:[currentTime floatValue] +  [timer timeInterval]];
+    
+    remainingTime =   ([totalTime intValue] * 60) - [currentTime floatValue];
+
+    if (remainingTime >= 60)
+    {
+        mins = remainingTime / 60;
+        secs = remainingTime- (60 * mins);
+    } else {
+        secs = remainingTime;
+        
+        if (secs <= 0)
+        {
+            [timer invalidate];
+            timer = nil;
+            return ;
+        }
+    }
+    
+    if (secs == 60)
+    {
+        secs = 59;
+    }
+
+    if ([totalTime intValue] != 0)
+    {
+        if (secs > 9)
+        {
+            [Timer setText:[NSString stringWithFormat:@"%i:%.0f", mins, secs ]];
+        } else {
+            [Timer setText:[NSString stringWithFormat:@"%i:0%.0f", mins, secs ]];
+
+        }
+    }
 }
 
 @end

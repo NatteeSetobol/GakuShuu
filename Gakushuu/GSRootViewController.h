@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableArray* Decks;
 }
 
-@property (strong, nonatomic) NSMutableArray *Decks;
+@property (strong, atomic) NSMutableArray *Decks;
 @property (strong, nonatomic) IBOutlet UITableView *DeckTable;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *AddDeckButton;
 @property (strong, nonatomic) IBOutlet UITabBar *ToolBar;

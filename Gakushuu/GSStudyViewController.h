@@ -17,7 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
     UITapGestureRecognizer *doubleTapAction;
     NSMutableArray *KanjisDueDeck;
     NSMutableDictionary *Options;
+    NSNumber *currentTime;
+    NSNumber *totalTime;
+    NSTimer *sessionTimer;
 }
+@property (retain, atomic) NSNumber *totalTime;
+@property (retain, atomic) NSNumber *currentTime;
 @property (retain, nonatomic) NSMutableDictionary *Options;
 @property (retain, nonatomic) NSMutableArray *KanjisDueDeck;
 @property (retain, nonatomic) UITapGestureRecognizer *doubleTapAction;
@@ -35,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (retain, nonatomic) IBOutlet UIButton *ButtonRatingFour;
 @property (retain, nonatomic) IBOutlet UIButton *ButtonRatingFive;
 @property (retain, nonatomic) IBOutlet UIButton *ButtonRatingSix;
+@property (strong, atomic) IBOutlet UILabel *Timer;
+@property (retain, atomic)  NSTimer *sessionTimer;
 
 
 -(id) ShowAnswer: (UIGestureRecognizer*) gesture;

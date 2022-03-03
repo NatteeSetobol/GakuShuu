@@ -28,7 +28,7 @@
 }
 
 
- - (void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self refreshDeckTable];
 }
@@ -40,13 +40,17 @@
 
 -(void) refreshDeckTable
 {
-    KanjiDatabase *KanjiDatabaseIns = NULL;
-    KanjiDatabaseIns = [KanjiDatabase GetInstance];
+        
+    dispatch_queue_t getDeckQueue = dispatch_queue_create("GetDeck", NULL);
+     dispatch_async(getDeckQueue, ^{
+         KanjiDatabase *KanjiDatabaseIns = NULL;
+         KanjiDatabaseIns = [KanjiDatabase GetInstance];
 
-    Decks = [KanjiDatabaseIns GetAllDecks];
-    
-    [_DeckTable reloadData];
-    
+         self.Decks = [KanjiDatabaseIns GetAllDecks];
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self.DeckTable reloadData];
+         });
+     });
    
 }
 

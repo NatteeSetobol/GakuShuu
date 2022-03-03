@@ -517,6 +517,7 @@
                         <outlet property="OnLabel" destination="Qgp-rn-A6G" id="y6O-Kn-CYz"/>
                         <outlet property="OnTagLabel" destination="JbV-ma-Rol" id="lHi-yp-CgO"/>
                         <outlet property="RatingLabel" destination="lmb-IR-dgN" id="o63-wn-84g"/>
+                        <outlet property="Timer" destination="WV2-Kg-n1O" id="daR-a3-TCF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUC-bC-7Vx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
