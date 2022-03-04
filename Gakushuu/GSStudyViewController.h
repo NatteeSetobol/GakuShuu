@@ -20,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
     NSNumber *currentTime;
     NSNumber *totalTime;
     NSTimer *sessionTimer;
+    bool isTimerOn;
 }
+@property bool isTimerOn;
 @property (retain, atomic) NSNumber *totalTime;
 @property (retain, atomic) NSNumber *currentTime;
 @property (retain, nonatomic) NSMutableDictionary *Options;

@@ -13,7 +13,7 @@
 
 @implementation GSStudyViewController
 
-@synthesize doubleTapAction,KanjisDueDeck,Options,totalTime, currentTime,sessionTimer, Timer;
+@synthesize doubleTapAction,KanjisDueDeck,Options,totalTime, currentTime,sessionTimer, Timer,isTimerOn;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,7 +60,12 @@
     KanjiLimit = (NSNumber*)[Options objectForKey:@"kanjiperday"];
     totalTime  = (NSNumber*)[Options objectForKey:@"timerinmin"];
     
-    
+    if ([totalTime intValue] == 0)
+    {
+        isTimerOn = false;
+    } else {
+        isTimerOn = true;
+    }
    // [_Timer setText:[NSString stringWithFormat:@"%@:00", totalTime]];
     
     /*
@@ -276,12 +281,13 @@
         }
 
         KanjiDatabaseIns = [KanjiDatabase GetInstance];
-        
-        if ([KanjiDatabaseIns UpdateCardStatus:CardId DueDate:TomarrowString Quality:Quality Interval:Interval EaseFactor:EaseFactor Repetitions: Repetitions])
+        if (Rating != 0)
         {
-            NSLog(@"card updated");
+            if ([KanjiDatabaseIns UpdateCardStatus:CardId DueDate:TomarrowString Quality:Quality Interval:Interval EaseFactor:EaseFactor Repetitions: Repetitions])
+            {
+                NSLog(@"card updated");
+            }
         }
-        
         [KanjisDueDeck removeObject:CurrentKanjiInfo];
         
         // NOTES(): Recycle it back in if it was given a zero rating
@@ -292,15 +298,21 @@
         
         if ([KanjisDueDeck count] > 0)
         {
-            if ([totalTime intValue] != 0)
+            if ([totalTime intValue] == 0 && isTimerOn)
             {
+                [self ShowFinishedView];
+            } else {
                 NSMutableDictionary *NextKanjiInfo = NULL;
                 NextKanjiInfo = [KanjisDueDeck objectAtIndex:0];
-        
+    
                 [self SetNextKanji: NextKanjiInfo ];
-        
+    
                 [self HideAnswer];
+            
+         
             }
+                
+        
         } else {
             [self ShowFinishedView];
         }
