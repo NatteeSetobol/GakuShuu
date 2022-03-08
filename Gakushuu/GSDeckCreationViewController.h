@@ -13,7 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GSDeckCreationViewController : UIViewController
 {
+    @public int DeckId;
     id selectionCallback;
+    @public UITextField *DeckField;
+    UITextView *DescriptionField;
 }
 
 @property (atomic, strong) id selectionCallback;

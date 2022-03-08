@@ -22,7 +22,6 @@
     
     SqlInstance = [sqlite3_helper GetDatabaseInstance];
     
-    
     return KanjiDatabaseInstance;
 }
 
@@ -44,7 +43,6 @@
 
     TodayString = [TodayFormatter stringFromDate:Today];
 
-        
     Values = [[NSMutableArray alloc] init];
     [Values addObject:@"0"];
     [Values addObject:DeckName];
@@ -73,7 +71,6 @@
     inserted = [SqlInstance Insert:@"kanjis" Values:kanjiInfo];
     
 
-;
     return inserted;
 }
 
@@ -176,6 +173,16 @@
 
 }
 
+-(bool) UpdateDeck: (int) DeckID DeckName: (NSString*) deckName DeckDescription: description
+{
+    sqlite3_helper *SqlInstance = nil;
+    
+    SqlInstance = [sqlite3_helper GetDatabaseInstance];
+
+    return [SqlInstance UpdateColumnBy:@"decks" Where:[NSString stringWithFormat:@"id=%i", DeckID] Query:[NSString stringWithFormat:@"name=\'%@\', description=\'%@\'", deckName, description ]];
+
+}
+
 -(bool) UpdateCardStatus: (int) CardId DueDate: (NSString*) DueDate Quality: (int) Quality Interval: (int) Interval EaseFactor: (float) EaseFactor Repetitions: (int) Repetition
 {
     sqlite3_helper *SqlInstance = nil;
@@ -191,10 +198,7 @@
     NSMutableArray *RowResult = NULL;
     NSString *query = NULL;
 
-    
     SqlInstance = [sqlite3_helper GetDatabaseInstance];
-    
-    
     
     query = [NSString stringWithFormat:@"where deckid=%i AND duedate = '0' ORDER BY RANDOM() LIMIT %i", DeckId, Limit];
     

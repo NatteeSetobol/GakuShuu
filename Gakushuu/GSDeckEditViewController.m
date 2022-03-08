@@ -30,6 +30,10 @@
     
     KanjiCreationButton.target = self;
     KanjiCreationButton.action = @selector(KanjiNewCreation:);
+    
+    
+
+
 }
 
 -(IBAction) KanjiNewCreation: (id) sender

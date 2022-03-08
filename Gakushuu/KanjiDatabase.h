@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(bool) UpdateKanjiDueDate: (int) CardID DueDate: (NSString*) DueDate;
 -(NSMutableArray*) GetDueKanjis: (int) DeckId;
 -(bool) UpdateCardStatus: (int) CardId DueDate: (NSString*) DueDate Quality: (int) Quality Interval: (int) Interval EaseFactor: (float) EaseFactor Repetitions: (int) Repetition;
+-(bool) UpdateDeck: (int) DeckID DeckName: (NSString*) deckName DeckDescription: description;
+
 
 @end
 

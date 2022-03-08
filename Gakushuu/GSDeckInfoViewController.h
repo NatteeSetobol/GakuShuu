@@ -10,6 +10,7 @@
 #import "GSDeckEditViewController.h"
 #import "GSOptionViewController.h"
 #import "GSStudyViewController.h"
+#import "GSDeckCreationViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

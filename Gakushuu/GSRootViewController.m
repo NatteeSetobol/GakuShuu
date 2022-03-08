@@ -25,6 +25,8 @@
     CGRect frame = _DeckTable.frame;
     frame.size.height = _DeckTable.frame.size.height - _ToolBar.frame.size.height - DECK_TABLE_MARGIN ;
     _DeckTable.frame = frame;
+    
+
 }
 
 
@@ -58,7 +60,7 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     GSDeckCreationViewController* DeckCreationView = [storyboard instantiateViewControllerWithIdentifier:@"DeckCreation"];
-    
+    DeckCreationView->DeckId = -1;
     
     DeckCreationView.modalPresentationStyle = UIModalPresentationPopover;
     [self presentViewController:DeckCreationView animated:true completion:^{
@@ -92,11 +94,7 @@
     if (cell == nil)
     {
         //NSMutableDictionary *cellTitle = NULL;
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"eventCell"];
-        
-
-
-        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"eventCell"];        
     }
 
     cell.textLabel.text = Deckname;
