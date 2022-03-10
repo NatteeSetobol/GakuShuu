@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7201A97827D96635005E5F6F /* GSDeleteModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7201A97727D96635005E5F6F /* GSDeleteModalView.m */; };
 		720C2B3C27B31870006F5985 /* database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 720C2B3B27B3186F006F5985 /* database.sqlite3 */; };
 		723710D927B5DA67008A679C /* GSKanjiCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */; };
 		72437A1927BA0133003C6C11 /* GSStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72437A1827BA0133003C6C11 /* GSStudyViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7201A97627D96635005E5F6F /* GSDeleteModalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeleteModalView.h; sourceTree = "<group>"; };
+		7201A97727D96635005E5F6F /* GSDeleteModalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeleteModalView.m; sourceTree = "<group>"; };
 		720C2B3B27B3186F006F5985 /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sqlite3; sourceTree = "<group>"; };
 		723710D727B5DA67008A679C /* GSKanjiCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSKanjiCreationViewController.h; sourceTree = "<group>"; };
 		723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSKanjiCreationViewController.m; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				72632C0B27B19D07007F21AD /* AppDelegate.m */,
 				72632C0D27B19D07007F21AD /* SceneDelegate.h */,
 				72632C0E27B19D07007F21AD /* SceneDelegate.m */,
+				7201A97627D96635005E5F6F /* GSDeleteModalView.h */,
+				7201A97727D96635005E5F6F /* GSDeleteModalView.m */,
 				7253093527B455EF0076AFE4 /* GSDeckInfoViewController.h */,
 				7253093627B455EF0076AFE4 /* GSDeckInfoViewController.m */,
 				728C827827B1A02C00473BE7 /* GSRootViewController.h */,
@@ -318,6 +323,7 @@
 				7253093727B455EF0076AFE4 /* GSDeckInfoViewController.m in Sources */,
 				72632C0C27B19D07007F21AD /* AppDelegate.m in Sources */,
 				723710D927B5DA67008A679C /* GSKanjiCreationViewController.m in Sources */,
+				7201A97827D96635005E5F6F /* GSDeleteModalView.m in Sources */,
 				72B56CF727B7093F005B5C05 /* GSOptionViewController.m in Sources */,
 				72632C1D27B19D0D007F21AD /* main.m in Sources */,
 				7253093A27B48D4B0076AFE4 /* GSDeckEditViewController.m in Sources */,

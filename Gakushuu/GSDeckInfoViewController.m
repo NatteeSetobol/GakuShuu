@@ -34,7 +34,7 @@
     
     [_Study addTarget:self action:@selector(studyKanji:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(plusButtonHit)];
+    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteDeck:)];
     
     UIBarButtonItem *EditButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editDeck:)];
     
@@ -43,6 +43,32 @@
     
     self.navigationItem.rightBarButtonItems=barItems;
     
+}
+
+-(void) deleteDeck: (id) sender
+{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    GSDeleteModalView* deleteModalView = [storyboard instantiateViewControllerWithIdentifier:@"DeleteModalView"];
+    deleteModalView.deckID = DeckId;
+    
+    
+    [self presentViewController:deleteModalView animated:true completion:^{
+        
+        [deleteModalView.Description setText:@"This will delete the deck as well as cards associated with it."];
+        
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self
+         selector:@selector(deleteDismissed  )
+         name:@"deleteCreationDismissed"
+         object:nil];
+    }];
+     
+}
+
+-(void) deleteDismissed
+{
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 -(void) editDeck: (id) sender

@@ -11,6 +11,7 @@
 #import "GSOptionViewController.h"
 #import "GSStudyViewController.h"
 #import "GSDeckCreationViewController.h"
+#import "GSDeleteModalView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -55,7 +55,8 @@ typedef struct sql_data
 -(int) GetLastInsertId;
 
 -(bool) Insert: (NSString *) DatabaseName Values: (NSMutableArray *) Values;
--(bool) UpdateColumnBy: (NSString*) tableName Where: (NSString*) whereStatement Query: (NSString*) query;  
+-(bool) UpdateColumnBy: (NSString*) tableName Where: (NSString*) whereStatement Query: (NSString*) query;
+-(bool) deleteFromDatabase: (NSString*) from  Where: (NSString *) where;
 
 @end
 

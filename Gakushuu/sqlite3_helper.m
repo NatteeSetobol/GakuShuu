@@ -427,6 +427,13 @@
     return didInsert;
 }
 
+-(bool) deleteFromDatabase: (NSString*) from  Where: (NSString *) where
+{
+    NSString *SQLCommand = NULL;
+
+    SQLCommand = [NSString stringWithFormat:@"DELETE FROM %@ where %@",from, where];
+    return [self RunCommand:SQLCommand];
+}
 
 
 -(NSString *) GetError
