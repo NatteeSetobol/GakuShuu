@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(bool) UpdateCardStatus: (int) CardId DueDate: (NSString*) DueDate Quality: (int) Quality Interval: (int) Interval EaseFactor: (float) EaseFactor Repetitions: (int) Repetition;
 -(bool) UpdateDeck: (int) DeckID DeckName: (NSString*) deckName DeckDescription: description;
 -(bool) deleteDeck: (int) ID;
+-(bool) deleteCard: (int) ID;
 
 
 @end

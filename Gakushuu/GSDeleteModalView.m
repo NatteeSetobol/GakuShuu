@@ -26,10 +26,17 @@
     
     KanjiDatabaseIns = [KanjiDatabase GetInstance];
     
-    if ([KanjiDatabaseIns deleteDeck:deckID])
+    if (deckID != -1)
     {
-
-        NSLog(@"deleted!");
+        if ([KanjiDatabaseIns deleteDeck:deckID])
+        {
+            NSLog(@"deleted!");
+        }
+    } else {
+        if ([KanjiDatabaseIns deleteCard:cardID])
+        {
+            NSLog(@"deleted card! %i", cardID);
+        }
     }
     
     [self dismissViewControllerAnimated:true completion:^{
@@ -43,7 +50,9 @@
 -(IBAction) closeModal:(id)sender
 {
     [self dismissViewControllerAnimated:true completion:^{
-        
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"deleteCreationDismissed"
+         object:nil userInfo:nil];
 
     }];
 }

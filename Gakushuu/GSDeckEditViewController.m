@@ -85,20 +85,59 @@
     
     NSMutableDictionary *CardRow = [Cards objectAtIndex:indexPath.row];
     NSString *Kanji = [CardRow objectForKey:@"kanji"];
+    NSNumber *kanjiID = [CardRow objectForKey:@"id"];
+    
     
     if (cell == nil)
     {
         //NSMutableDictionary *cellTitle = NULL;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"eventCell"];
         
-
+        UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeClose];
+        deleteButton.frame = CGRectMake(cell.frame.size.width-30, (cell.frame.size.height/2)-5,deleteButton.frame.size.width, deleteButton.frame.size.height);
+        cell.tag = [kanjiID intValue];
+        deleteButton.tag = [kanjiID intValue];
+        
+        [deleteButton addTarget:self action:@selector(showDeletionView:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [cell.contentView addSubview:deleteButton];
+        
 
         
     }
-
+    cell.tag = [kanjiID intValue];
     cell.textLabel.text = Kanji;
 
+
+    
     return cell;
+}
+
+-(void) showDeletionView: (id) sender
+{
+    UIButton *cell  = (UIButton*) sender;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    GSDeleteModalView* deleteModalView = [storyboard instantiateViewControllerWithIdentifier:@"DeleteModalView"];
+    deleteModalView.deckID = -1;
+    deleteModalView.cardID = (int) cell.tag;
+    
+    NSLog(@"Tag: %i", (int) deleteModalView.cardID);
+    
+    [self presentViewController:deleteModalView animated:true completion:^{
+        
+        [deleteModalView.Description setText:@"This card will be deleted. You can not undo this."];
+        
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self
+         selector:@selector(deleteDismissed  )
+         name:@"deleteCreationDismissed"
+         object:nil];
+    }];
+}
+
+-(void) deleteDismissed
+{
+    [self CardCreationDismissed];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -268,4 +268,16 @@
     return (didDeleteFromDeck && didDeleteCardsFromDeck);
 }
 
+-(bool) deleteCard: (int) ID
+{
+    sqlite3_helper *SqlInstance = nil;
+    bool didDeleteFromCards = false;
+    
+    SqlInstance = [sqlite3_helper GetDatabaseInstance];
+    
+    didDeleteFromCards = [SqlInstance deleteFromDatabase:@"kanjis" Where: [NSString stringWithFormat:@"id=%i", ID]];
+    
+    return didDeleteFromCards;
+}
+
 @end

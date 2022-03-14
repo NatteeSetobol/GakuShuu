@@ -9,6 +9,7 @@
 #import "KanjiDatabase.h"
 #import "GSKanjiCreationViewController.h"
 #import "GSOptionViewController.h"
+#import "GSDeleteModalView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
