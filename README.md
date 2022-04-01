@@ -1,9 +1,7 @@
 # GakuShuu
 
 
-Gakujuu (学習) which means "learn" or "studying" in Japanese is a flashcard that uses the SRS (spaced repetition system) system to help memorize Kanji. 
-The way I see SRS is like doing reps at the gym. For example, lets say you start with 20 pounds and every 5 mins you lift the 20 pounds of weight 10 times.
-You then take a rest then repeat. The next day you up it, instead of 20 pounds you now do 25 pounds. It works the same way with your brain. 
+Gakujuu (学習) which means "learn" or "studying" in Japanese, is a flashcard for the iOS that uses the SRS (spaced repetition system) system to help memorize Kanjis/Words. It will feature Kanji/Word from Japanese Proficiency four, three, two and one. It will also let you add and look up Kanjis/Words and add them to a deck.
 
 
 # How to compile and run
