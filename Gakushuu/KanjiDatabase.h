@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(bool) UpdateDeck: (int) DeckID DeckName: (NSString*) deckName DeckDescription: description;
 -(bool) deleteDeck: (int) ID;
 -(bool) deleteCard: (int) ID;
+-(int) GetLastInsertedID;
 
 
 @end

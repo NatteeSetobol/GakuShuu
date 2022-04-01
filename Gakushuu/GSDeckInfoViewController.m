@@ -78,9 +78,6 @@
     
     deckCreationView->DeckId = DeckId;
     
-
-    
-    
     deckCreationView.modalPresentationStyle = UIModalPresentationPopover;
     [self presentViewController:deckCreationView animated:true completion:^{
         [deckCreationView.DeckField setText: self.title];

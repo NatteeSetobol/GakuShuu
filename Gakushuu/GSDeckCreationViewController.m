@@ -6,13 +6,19 @@
 //
 
 #import "GSDeckCreationViewController.h"
+#include "./libpop2-objc/required/nix.cpp"
+#include "./libpop2-objc/required/memory.cpp"
+#include "./libpop2-objc/stringz.cpp"
+#include "./libpop2-objc/marray.cpp"
+#include "./libpop2-objc/JsonParser.cpp"
+
 
 @interface GSDeckCreationViewController ()
 
 @end
 
 @implementation GSDeckCreationViewController
-@synthesize selectionCallback,DescriptionField,DeckField;
+@synthesize selectionCallback,DescriptionField,DeckField, urlField,isAddByLink,errorLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,14 +55,138 @@
 {
     KanjiDatabase *KanjiDatabaseIns = NULL;
     KanjiDatabaseIns = [KanjiDatabase GetInstance];
-    [KanjiDatabaseIns CreateDeck:self.DeckField.text Description:self.DescriptionField.text];
-
-    [self dismissViewControllerAnimated:true completion:^{
-       [self selectionCallback];
+    
+    if (isAddByLink.isOn)
+    {
+        NSURL *url = NULL;
+        NSURLSession  *urlSession = NULL;
+        NSURLRequest *request = NULL;
+        NSURLSessionTask *urlSessionTask = NULL;
         
-        [[NSNotificationCenter defaultCenter]
-         postNotificationName:@"DeckCreationDismissed"
-         object:nil userInfo:nil];
+        url = [[NSURL alloc] initWithString:urlField.text];
+        urlSession = [NSURLSession sharedSession];
+        request = [[NSURLRequest alloc] initWithURL:url];
+        
+      
+        
+        urlSessionTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+        {
+            char *responseData = (char*) [data bytes];
+            
+            if (responseData)
+            {
+                int dID = -1;
+
+                Json_Branch jBranch = {};
+                
+                JSON_Parse(responseData, &jBranch);
+                
+                if (jBranch.subBranch)
+                {
+                    if (jBranch.subBranch->head->value)
+                    {
+                        NSString *deckname = NULL;
+
+                        
+                        deckname = [NSString stringWithUTF8String: jBranch.subBranch->head->value];
+                    
+                        [KanjiDatabaseIns CreateDeck:deckname Description:@"test"];
+                        
+                        dID = [KanjiDatabaseIns GetLastInsertedID];
+                        if (jBranch.subBranch->head->next)
+                        {
+                            if (StrCmp(jBranch.subBranch->head->next->key, "cards"))
+                            {
+                                Json_Branch *cardBranch = NULL;
+                                
+                                cardBranch = jBranch.subBranch->head->next->subBranch->head;
+                                if (cardBranch)
+                                {
+
+
+                                    while (cardBranch)
+                                    {
+                                        
+                                        Json_Branch *entries = NULL;
+                                        NSString *kanjiString = @"";
+                                        NSString *onString = @"";
+                                        NSString *kunString = @"";
+                                        NSString *meaningString = @"";
+
+                                        entries = cardBranch->subBranch->head;
+                                        
+                                        while (entries)
+                                        {
+                                            if (StrCmp(entries->key,"Kanji"))
+                                            {
+                                                kanjiString = [[NSString alloc] initWithUTF8String:entries->value];
+                                            }
+                                            if (StrCmp(entries->key,"on"))
+                                            {
+                                                onString = [[NSString alloc] initWithUTF8String:entries->value];
+                                            }
+                                            if (StrCmp(entries->key,"kun"))
+                                            {
+                                                kunString = [[NSString alloc] initWithUTF8String:entries->value];
+                                            }
+                                            if (StrCmp(entries->key,"meaning"))
+                                            {
+                                                meaningString = [[NSString alloc] initWithUTF8String:entries->value];
+                                            }
+                                            
+                                            entries = entries->next;
+                                        }
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            KanjiDatabase *KDatabase = NULL;
+                                            NSMutableArray *Values = [[NSMutableArray alloc] init];
+                                        
+                                            KDatabase = [KanjiDatabase GetInstance];
+
+                                            [Values addObject:@"0"];
+                                            [Values addObject: [NSString stringWithFormat:@"%i", dID ]];
+                                            [Values addObject:kanjiString];
+                                            [Values addObject:meaningString];
+                                            [Values addObject: kunString];
+                                            [Values addObject: onString];
+                                            [Values addObject:@""];
+                                            [Values addObject:@"0"];
+                                            [Values addObject:@"0"];
+                                            [Values addObject:@"0"];
+                                            [Values addObject:@"0"];
+                                            [Values addObject:@"0"];
+                                            [Values addObject:@"0"];
+                                        
+                                            [KDatabase CreateKanji: dID Kanji:Values];
+                                        });
+                                        cardBranch = cardBranch->next;
+                                    }
+                                    
+                                }
+
+                                
+                            }
+                        }
+                    }
+                }
+
+            }
+    
+        }];
+        [urlSessionTask resume];
+        
+        
+         
+        
+    } else {
+        [KanjiDatabaseIns CreateDeck:self.DeckField.text Description:self.DescriptionField.text];
+    }
+    
+    [self dismissViewControllerAnimated:true completion:^{
+    [self selectionCallback];
+    
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"DeckCreationDismissed"
+     object:nil userInfo:nil];
     }];
 }
 
