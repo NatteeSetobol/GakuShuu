@@ -35,6 +35,8 @@
     
     [_CreateCancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
     
+    urlField.delegate = self;
+    
 }
 -(IBAction) updateDeck: (id) sender
 {
@@ -196,5 +198,8 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 @end

@@ -245,7 +245,7 @@
     TodayString = [TodayFormatter stringFromDate:Today];
 
     
-    query = [NSString stringWithFormat:@"where deckid=%i and duedate <= '%@' ", DeckId, TodayString];
+    query = [NSString stringWithFormat:@"where deckid=%i and duedate > '0' and duedate <= '%@' ", DeckId, TodayString];
     
     RowResult = [SqlInstance GetFromDatabase: "kanjis" Query: "*"  Statement: (char*) [query UTF8String] ];
 
