@@ -412,7 +412,8 @@
         {
             [timer invalidate];
             timer = nil;
-            return ;
+            totalTime = 0;
+           // return ;
         }
     }
     
@@ -421,7 +422,7 @@
         secs = 59;
     }
 
-    if ([totalTime intValue] != 0)
+   // if ([totalTime intValue] > 0)
     {
         if (secs > 9)
         {
