@@ -249,7 +249,72 @@
     
     RowResult = [SqlInstance GetFromDatabase: "kanjis" Query: "*"  Statement: (char*) [query UTF8String] ];
 
+    
     return RowResult;
+}
+
+-(int) GetTotalKanjisInDeck: (int) DeckId
+{
+    sqlite3_helper *SqlInstance = nil;
+    NSMutableArray *RowResult = NULL;
+    int count = 0;
+    NSString *query = NULL;
+    NSDateFormatter *TodayFormatter = NULL;
+    NSDate *Today = NULL;
+    NSString *TodayString=NULL;
+    
+    SqlInstance = [sqlite3_helper GetDatabaseInstance];
+    
+    Today = [NSDate date];
+    TodayFormatter = [[NSDateFormatter alloc] init];
+    [TodayFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    TodayString = [TodayFormatter stringFromDate:Today];
+
+    
+    query = [NSString stringWithFormat:@"where deckid=%i", DeckId];
+    
+    RowResult = [SqlInstance GetFromDatabase: "kanjis" Query: "COUNT()"  Statement: (char*) [query UTF8String] ];
+    
+    NSDictionary *nsNum =  [RowResult objectAtIndex:0];
+
+    if (nsNum)
+    {
+        NSNumber *num = [nsNum objectForKey:@"COUNT()"];
+        count = [num intValue];
+    }
+    return count;
+}
+
+-(int) GetTotalKanjisStuided: (int) DeckId
+{
+    sqlite3_helper *SqlInstance = nil;
+    NSMutableArray *RowResult = NULL;
+    int count = 0;
+    NSString *query = NULL;
+    NSDateFormatter *TodayFormatter = NULL;
+    NSDate *Today = NULL;
+    NSString *TodayString=NULL;
+    
+    SqlInstance = [sqlite3_helper GetDatabaseInstance];
+    
+    Today = [NSDate date];
+    TodayFormatter = [[NSDateFormatter alloc] init];
+    [TodayFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    TodayString = [TodayFormatter stringFromDate:Today];
+
+    
+    query = [NSString stringWithFormat:@"where deckid=%i AND duedate != '0'", DeckId];
+    
+    RowResult = [SqlInstance GetFromDatabase: "kanjis" Query: "COUNT()"  Statement: (char*) [query UTF8String] ];
+    
+    NSDictionary *nsNum =  [RowResult objectAtIndex:0];
+
+    if (nsNum)
+    {
+        NSNumber *num = [nsNum objectForKey:@"COUNT()"];
+        count = [num intValue];
+    }
+    return count;
 }
 
 -(bool) deleteDeck: (int) ID

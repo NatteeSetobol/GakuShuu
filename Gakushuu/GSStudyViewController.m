@@ -34,6 +34,8 @@
     NSNumber* KanjiLimit=0;
     NSDateComponents* components = NULL;
     NSMutableArray *DueKanji = NULL;
+    
+
 
     
     [self HideAnswer];
@@ -422,16 +424,15 @@
         secs = 59;
     }
 
-   // if ([totalTime intValue] > 0)
+   
+    
+    if (secs > 9)
     {
-        if (secs > 9)
-        {
-            [Timer setText:[NSString stringWithFormat:@"%i:%.0f", mins, secs ]];
-        } else {
-            [Timer setText:[NSString stringWithFormat:@"%i:0%.0f", mins, secs ]];
-
-        }
+        [Timer setText:[NSString stringWithFormat:@"%i:%.0f", mins, secs ]];
+    } else {
+        [Timer setText:[NSString stringWithFormat:@"%i:0%.0f", mins, secs ]];   
     }
+    
 }
 
 @end

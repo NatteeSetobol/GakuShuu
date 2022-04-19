@@ -30,7 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(bool) deleteDeck: (int) ID;
 -(bool) deleteCard: (int) ID;
 -(int) GetLastInsertedID;
-
+-(int) GetTotalKanjisInDeck: (int) DeckId;
+-(int) GetTotalKanjisStuided: (int) DeckId;
 
 @end
 

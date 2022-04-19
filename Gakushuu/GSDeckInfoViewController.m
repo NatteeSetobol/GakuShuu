@@ -19,14 +19,36 @@
     KanjiDatabase *KanjiDatabaseIns = NULL;
     NSString *DeckDesciptionString = NULL;
     NSMutableDictionary *DeckRowOne = NULL;
+    NSMutableArray *kanjiDue = NULL;
+    NSString *DeckDueDate = NULL;
+    NSDateFormatter *dateFormatter = NULL;
+    NSDate *DueDate = NULL;
+    NSTimeInterval ResultDays;
+    NSDate *Today = NULL;
+    NSMutableArray *OptionArray=NULL;
+    NSMutableDictionary *Options;
+    NSNumber* KanjiLimit=0;
+    int totalDue = 0;
+    bool newKanji = false;
+
+
+
     
     KanjiDatabaseIns = [KanjiDatabase GetInstance];
     Deck = [KanjiDatabaseIns GetDeck:DeckId];
+    
+    OptionArray = [KanjiDatabaseIns GetDeckOptions:DeckId];
+    Options = [OptionArray objectAtIndex:0];
+    
+    KanjiLimit = (NSNumber*)[Options objectForKey:@"kanjiperday"];
     
     DeckRowOne = [Deck objectAtIndex:0];
     [self setTitle:(NSString*) [DeckRowOne objectForKey:@"name"]];
     
     DeckDesciptionString = (NSString*) [DeckRowOne objectForKey:@"description"];
+    
+    DeckDueDate = [DeckRowOne objectForKey:@"nextdue"];
+
     
     [DeckDescription setText:DeckDesciptionString];
     
@@ -43,6 +65,46 @@
     
     self.navigationItem.rightBarButtonItems=barItems;
     
+    kanjiDue = [KanjiDatabaseIns GetDueKanjis:DeckId];
+
+    Today = [NSDate date];
+
+    totalDue = (int)[kanjiDue count];
+    
+    if ([DeckDueDate isEqualToString:@"NULL"])
+    {
+
+        totalDue += [KanjiLimit intValue] ;
+        newKanji = true;
+    } else {
+        
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        DueDate = [dateFormatter dateFromString:DeckDueDate];
+        ResultDays = [DueDate timeIntervalSinceDate: Today];
+        
+        if ( ResultDays < 10.0f)
+        {
+            totalDue += [KanjiLimit intValue] ;
+            
+            
+
+        }
+        newKanji = true;
+    }
+    
+    if (newKanji && totalDue != 0)
+    {
+        [_totalKanjiDue setText:[NSString stringWithFormat:@"%i +%i new", totalDue, [KanjiLimit intValue]]];
+    } else
+    {
+        [_totalKanjiDue setText:[NSString stringWithFormat:@"%i", totalDue]];
+    }
+    [_totalKanjiCountLabel setText:[NSString stringWithFormat:@"%i", [KanjiDatabaseIns GetTotalKanjisInDeck:DeckId]]];
+    
+    [_studiedLabel setText:[NSString stringWithFormat:@"%i", [KanjiDatabaseIns GetTotalKanjisStuided:DeckId]]];
+
 }
 
 -(void) deleteDeck: (id) sender
