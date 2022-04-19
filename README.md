@@ -21,3 +21,4 @@ In order to compile and run this, you must have XCode 13.1.
 4. Better search.
 5. Status on how you are doing.
 6. Suspend Card (if you no longer need to memorize a kanji or if you don't feel this Kanji or word isn't as important)
+7. Implement Story for Kanji
