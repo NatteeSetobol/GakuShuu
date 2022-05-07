@@ -16,7 +16,7 @@ In order to compile and run this, you must have XCode 13.1.
 #Future features:
 
 1. Undo (sometimes you press the wrong button)
-2. ~~Voice to text (So you can actually hear how it's pronouced)
+2. ~~Voice to text (So you can actually hear how it's pronouced)~~
 3. Dictionary Search + Add to Deck. (Great if you reading something and need to keep track of words you don't know!)
 4. Better search.
 5. Status on how you are doing.
