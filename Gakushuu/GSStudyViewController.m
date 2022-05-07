@@ -13,7 +13,7 @@
 
 @implementation GSStudyViewController
 
-@synthesize doubleTapAction,KanjisDueDeck,Options,totalTime, currentTime,sessionTimer, Timer,isTimerOn;
+@synthesize doubleTapAction,KanjisDueDeck,Options,totalTime, currentTime,sessionTimer, Timer,isTimerOn,textToVoice;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +36,7 @@
     NSMutableArray *DueKanji = NULL;
     
 
-
+    isFlipped = false;
     
     [self HideAnswer];
     [_ButtonRatingOne setTag:5];
@@ -51,6 +51,29 @@
     [_ButtonRatingFive addTarget:self action:@selector(ButtonRating:) forControlEvents:UIControlEventTouchUpInside];
     [_ButtonRatingSix setTag:0];
     [_ButtonRatingSix addTarget:self action:@selector(ButtonRating:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] init];
+    tapGesture.numberOfTapsRequired = 2;
+    tapGesture.name = @"kanji";
+    [tapGesture addTarget:self action:@selector(handleTap:)];
+    
+    [_KanjiLabel addGestureRecognizer:tapGesture];
+    
+    UITapGestureRecognizer *kunGesture = [[UITapGestureRecognizer alloc] init];
+    kunGesture.numberOfTapsRequired = 2;
+    kunGesture.name = @"kun";
+    [kunGesture addTarget:self action:@selector(handleTap:)];
+    [_KunLabel setMultipleTouchEnabled:true];
+    [_KunLabel addGestureRecognizer:kunGesture];
+    
+    
+    UITapGestureRecognizer *onGesture = [[UITapGestureRecognizer alloc] init];
+    onGesture.numberOfTapsRequired = 2;
+    onGesture.name = @"on";
+    [onGesture addTarget:self action:@selector(handleTap:)];
+    [_OnLabel setMultipleTouchEnabled:true];
+    [_OnLabel addGestureRecognizer:onGesture];
     
     KanjisDueDeck = [[NSMutableArray alloc] init];
     
@@ -370,11 +393,12 @@
     doubleTapAction.delegate = self;
     [doubleTapAction addTarget:self action:@selector(ShowAnswer:)];
     [self.view addGestureRecognizer:doubleTapAction];
+    isFlipped = false;
 }
 
 -(id) ShowAnswer: (UIGestureRecognizer*) gesture
 {
-
+    isFlipped = true;
     [_KunTagLabel setHidden:false];
     [_KunLabel setHidden:false];
     [_OnTagLabel setHidden:false];
@@ -433,6 +457,36 @@
         [Timer setText:[NSString stringWithFormat:@"%i:0%.0f", mins, secs ]];   
     }
     
+}
+
+
+- (void) handleTap:(UITapGestureRecognizer *)tap
+{
+    NSString *text = NULL;
+    
+    if ([tap.name isEqualToString:@"kanji"])
+    {
+        text = _KanjiLabel.text;
+    } else
+    if ([tap.name isEqualToString:@"kun"])
+    {
+        text = _KunLabel.text;
+    }
+    if ([tap.name isEqualToString:@"on"])
+    {
+        text = _OnLabel.text;
+    }
+    
+    if (isFlipped)
+    {
+        NSLog(@"Touch!");
+        textToVoice = [[TextToVoice alloc] initWithText:text];
+        
+        [textToVoice GetLink];
+        
+    } else {
+        [self ShowAnswer:tap];
+    }
 }
 
 @end

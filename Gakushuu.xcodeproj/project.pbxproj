@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7201A97827D96635005E5F6F /* GSDeleteModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7201A97727D96635005E5F6F /* GSDeleteModalView.m */; };
 		720C2B3C27B31870006F5985 /* database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 720C2B3B27B3186F006F5985 /* database.sqlite3 */; };
+		720C602D281395D0009CA14A /* GSTextToVoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 720C602C281395D0009CA14A /* GSTextToVoice.m */; };
 		723710D927B5DA67008A679C /* GSKanjiCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */; };
 		72437A1927BA0133003C6C11 /* GSStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72437A1827BA0133003C6C11 /* GSStudyViewController.m */; };
 		724BAB8B27C6D5BC001FFCE6 /* GSStudyFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewController.m */; };
@@ -65,6 +66,8 @@
 		7201A97627D96635005E5F6F /* GSDeleteModalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeleteModalView.h; sourceTree = "<group>"; };
 		7201A97727D96635005E5F6F /* GSDeleteModalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeleteModalView.m; sourceTree = "<group>"; };
 		720C2B3B27B3186F006F5985 /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sqlite3; sourceTree = "<group>"; };
+		720C602B281395D0009CA14A /* GSTextToVoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSTextToVoice.h; sourceTree = "<group>"; };
+		720C602C281395D0009CA14A /* GSTextToVoice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSTextToVoice.m; sourceTree = "<group>"; };
 		723710D727B5DA67008A679C /* GSKanjiCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSKanjiCreationViewController.h; sourceTree = "<group>"; };
 		723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSKanjiCreationViewController.m; sourceTree = "<group>"; };
 		72437A1727BA0133003C6C11 /* GSStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSStudyViewController.h; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				728C827F27B1E54A00473BE7 /* sqlite3_helper.m */,
 				72632C0A27B19D07007F21AD /* AppDelegate.h */,
 				72632C0B27B19D07007F21AD /* AppDelegate.m */,
+				720C602B281395D0009CA14A /* GSTextToVoice.h */,
+				720C602C281395D0009CA14A /* GSTextToVoice.m */,
 				72632C0D27B19D07007F21AD /* SceneDelegate.h */,
 				72632C0E27B19D07007F21AD /* SceneDelegate.m */,
 				7201A97627D96635005E5F6F /* GSDeleteModalView.h */,
@@ -553,6 +558,7 @@
 				729EADB727F516E100E0912C /* nix.cpp in Sources */,
 				729EADB827F516E100E0912C /* stringz.cpp in Sources */,
 				729EADB927F516E100E0912C /* queue.cpp in Sources */,
+				720C602D281395D0009CA14A /* GSTextToVoice.m in Sources */,
 				729EADBA27F516E100E0912C /* htmlparser.cpp in Sources */,
 				729EADBB27F516E100E0912C /* nix_socket.cpp in Sources */,
 				729EADBC27F516E100E0912C /* token.cpp in Sources */,

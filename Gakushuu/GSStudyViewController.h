@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "KanjiDatabase.h"
 #import "GSStudyFinishedViewController.h"
+#import "GSTextToVoice.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,8 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
     NSNumber *totalTime;
     NSTimer *sessionTimer;
     bool isTimerOn;
+    bool isFlipped;
+    TextToVoice *textToVoice;
+    
 }
 @property bool isTimerOn;
+@property (retain, nonatomic) TextToVoice *textToVoice;
 @property (retain, atomic) NSNumber *totalTime;
 @property (retain, atomic) NSNumber *currentTime;
 @property (retain, nonatomic) NSMutableDictionary *Options;
