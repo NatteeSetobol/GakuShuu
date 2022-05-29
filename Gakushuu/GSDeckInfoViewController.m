@@ -50,7 +50,7 @@
     DeckDueDate = [DeckRowOne objectForKey:@"nextdue"];
 
     
-    [DeckDescription setText:DeckDesciptionString];
+   // [DeckDescription setText:DeckDesciptionString];
     
     [EditDeckButton addTarget:self action:@selector(gotoDeckEdit:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -88,8 +88,6 @@
         {
             totalDue += [KanjiLimit intValue] ;
             
-            
-
         }
         newKanji = true;
     }

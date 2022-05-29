@@ -6,11 +6,11 @@
 //
 
 #import "GSDeckCreationViewController.h"
-#include "./libpop2-objc/required/nix.cpp"
-#include "./libpop2-objc/required/memory.cpp"
-#include "./libpop2-objc/stringz.cpp"
-#include "./libpop2-objc/marray.cpp"
-#include "./libpop2-objc/JsonParser.cpp"
+#include "./libpop/required/nix.cpp"
+#include "./libpop/required/memory.cpp"
+#include "./libpop/stringz.cpp"
+#include "./libpop/marray.cpp"
+#include "./libpop/JsonParser.cpp"
 
 
 @interface GSDeckCreationViewController ()
@@ -36,6 +36,7 @@
     [_CreateCancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
     
     urlField.delegate = self;
+    DeckField.delegate = self;
     
 }
 -(IBAction) updateDeck: (id) sender
@@ -70,9 +71,11 @@
         request = [[NSURLRequest alloc] initWithURL:url];
         
       
-        
         urlSessionTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
         {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            if (httpResponse.statusCode == 200)
+            {
             char *responseData = (char*) [data bytes];
             
             if (responseData)
@@ -168,9 +171,16 @@
                                 
                             }
                         }
+                    } else {
+                        NSLog(@"not a json file!");
                     }
+                } else {
+                    NSLog(@"no data?");
                 }
 
+            }
+            } else {
+                NSLog(@"error has occured");
             }
     
         }];
@@ -192,6 +202,11 @@
     }];
 }
 
+
+-(IBAction) AddByDictionary: (id) sender
+{
+    
+}
 
 -(IBAction) cancel: (id) sender
 {

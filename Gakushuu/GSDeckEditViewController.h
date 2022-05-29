@@ -10,11 +10,13 @@
 #import "GSKanjiCreationViewController.h"
 #import "GSOptionViewController.h"
 #import "GSDeleteModalView.h"
+#import "GSSearchDictionaryModal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GSDeckEditViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
+    IBOutlet UIBarButtonItem *addByDictionary;
     UITableView *CardTable;
     NSMutableArray *Cards;
     UIBarButtonItem *KanjiCreationButton;

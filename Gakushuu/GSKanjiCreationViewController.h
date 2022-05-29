@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GSKanjiCreationViewController : UIViewController
 {
     @public int DeckId;
+    @public IBOutlet UITextField *KanjField;
+    @public IBOutlet UITextField *KunField;
+    @public IBOutlet UITextField *OnField;
+    @public IBOutlet UITextView *DesciptionField;
 }
 @property (strong, nonatomic) IBOutlet UIScrollView *ScrollView;
 @property (strong, nonatomic) IBOutlet UITextField *KanjField;

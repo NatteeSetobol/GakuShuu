@@ -158,6 +158,8 @@
         [KanjisDueDeck addObject:ExtractedDueKanji];
     }
     
+   // [self ShuffleDeck];
+    
     if ([KanjisDueDeck count] > 0)
     {
         NSMutableDictionary *FirstKanji = NULL;
@@ -170,6 +172,22 @@
     }
     
     sessionTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerEnd:) userInfo:nil repeats:true];
+}
+
+-(void) ShuffleDeck
+{
+    srand(time(NULL));
+    
+    
+    for (int i =0; i < 10000;i++)
+    {
+        int randomCard1 =arc4random_uniform(  [KanjisDueDeck count]-1);
+        int randomCard2 =arc4random_uniform(  [KanjisDueDeck count]-1);
+        
+        [KanjisDueDeck exchangeObjectAtIndex:randomCard1 withObjectAtIndex:randomCard2];
+
+
+    }
 }
 
 -(void) SetNextKanji: (NSMutableDictionary*) KanjiInfo

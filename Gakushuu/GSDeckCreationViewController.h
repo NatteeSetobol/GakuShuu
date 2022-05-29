@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KanjiDatabase.h"
-#include "./libpop2-objc/JsonParser.h"
+#include "./libpop/JsonParser.hpp"
 
 NS_ASSUME_NONNULL_BEGIN
 

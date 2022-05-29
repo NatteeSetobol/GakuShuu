@@ -30,6 +30,30 @@
     
     KanjiCreationButton.target = self;
     KanjiCreationButton.action = @selector(KanjiNewCreation:);
+    
+    addByDictionary.target = self;
+    addByDictionary.action = @selector(addByDic:);
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(CardCreationDismissed  )
+     name:@"CardCreationDismissed"
+     object:nil];
+    
+}
+
+-(IBAction) addByDic:(id)sender
+{
+    //DictionaryModal
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    GSSearchDictionaryModal* KanjiSearch = [storyboard instantiateViewControllerWithIdentifier:@"SearchDictionary"];
+    
+    KanjiSearch->DeckId = DeckId;
+    
+    KanjiSearch.modalPresentationStyle = UIModalPresentationPopover;
+    [self presentViewController:KanjiSearch animated:true completion:^{
+
+    }];
 }
 
 -(IBAction) KanjiNewCreation: (id) sender
@@ -43,13 +67,6 @@
     [self presentViewController:KanjiCreationView animated:true completion:^{
 
     }];
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(CardCreationDismissed  )
-     name:@"CardCreationDismissed"
-     object:nil];
-    //[self.navigationController pushViewController: KanjiCreationView animated:true];
 }
 
 

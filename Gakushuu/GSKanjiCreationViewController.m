@@ -12,14 +12,18 @@
 @end
 
 @implementation GSKanjiCreationViewController
+@synthesize KanjField, KunField, OnField, DesciptionField;
 
 - (void)viewDidLoad {
+   
     [super viewDidLoad];
     
     _ScrollView.contentSize  = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 280);
     
    // _ScrollView.delaysContentTouches = NO;
     _ScrollView.canCancelContentTouches = NO;
+    
+
 }
 
 -(IBAction) CreateKanji: (id) sender
@@ -31,10 +35,10 @@
 
     [Values addObject:@"0"];
     [Values addObject: [NSString stringWithFormat:@"%i", DeckId]];
-    [Values addObject:_KanjField.text];
-    [Values addObject:_DesciptionField.text];
-    [Values addObject:_KunField.text];
-    [Values addObject:_OnField.text];
+    [Values addObject:KanjField.text];
+    [Values addObject:DesciptionField.text];
+    [Values addObject:KunField.text];
+    [Values addObject:OnField.text];
     [Values addObject:_StoryField.text];
     [Values addObject:@"0"];
     [Values addObject:@"0"];
