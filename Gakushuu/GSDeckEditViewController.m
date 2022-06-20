@@ -107,7 +107,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"eventCell"];
         
         UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeClose];
-        deleteButton.frame = CGRectMake(cell.frame.size.width-30, (cell.frame.size.height/2)-5,deleteButton.frame.size.width, deleteButton.frame.size.height);
+        deleteButton.frame = CGRectMake(cell.frame.size.width + 25, (cell.frame.size.height/2)-5,deleteButton.frame.size.width, deleteButton.frame.size.height);
         cell.tag = [kanjiID intValue];
         deleteButton.tag = [kanjiID intValue];
         
@@ -166,8 +166,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-
+    
 }
 
 

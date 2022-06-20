@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     @public int DeckId;
     UITapGestureRecognizer *doubleTapAction;
     NSMutableArray *KanjisDueDeck;
+    NSMutableArray *KanjisUndoDeck;
     NSMutableDictionary *Options;
     NSNumber *currentTime;
     NSNumber *totalTime;
@@ -32,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (retain, atomic) NSNumber *currentTime;
 @property (retain, nonatomic) NSMutableDictionary *Options;
 @property (retain, nonatomic) NSMutableArray *KanjisDueDeck;
+@property (retain, nonatomic) NSMutableArray *KanjisUndoDeck;
 @property (retain, nonatomic) UITapGestureRecognizer *doubleTapAction;
 @property (retain, nonatomic) IBOutlet UILabel *KanjiLabel;
 @property (retain, nonatomic) IBOutlet UILabel *KunTagLabel;

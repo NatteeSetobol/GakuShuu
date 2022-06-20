@@ -13,7 +13,7 @@
 
 @implementation GSStudyViewController
 
-@synthesize doubleTapAction,KanjisDueDeck,Options,totalTime, currentTime,sessionTimer, Timer,isTimerOn,textToVoice;
+@synthesize doubleTapAction,KanjisDueDeck,Options,totalTime, currentTime,sessionTimer, Timer,isTimerOn,textToVoice,KanjisUndoDeck;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,6 +76,7 @@
     [_OnLabel addGestureRecognizer:onGesture];
     
     KanjisDueDeck = [[NSMutableArray alloc] init];
+    KanjisUndoDeck = [[NSMutableArray alloc] init];
     
     KanjiDatabaseIns = [KanjiDatabase GetInstance];
     
@@ -158,7 +159,7 @@
         [KanjisDueDeck addObject:ExtractedDueKanji];
     }
     
-   // [self ShuffleDeck];
+    [self ShuffleDeck];
     
     if ([KanjisDueDeck count] > 0)
     {
@@ -178,15 +179,17 @@
 {
     srand(time(NULL));
     
-    
-    for (int i =0; i < 10000;i++)
+    if ( [KanjisDueDeck count] > 0)
     {
-        int randomCard1 =arc4random_uniform(  [KanjisDueDeck count]-1);
-        int randomCard2 =arc4random_uniform(  [KanjisDueDeck count]-1);
+        for (int i =0; i < 10000;i++)
+        {
+            int randomCard1 =arc4random_uniform(  [KanjisDueDeck count]-1);
+            int randomCard2 =arc4random_uniform(  [KanjisDueDeck count]-1);
         
-        [KanjisDueDeck exchangeObjectAtIndex:randomCard1 withObjectAtIndex:randomCard2];
+            [KanjisDueDeck exchangeObjectAtIndex:randomCard1 withObjectAtIndex:randomCard2];
 
 
+            }
     }
 }
 
@@ -265,9 +268,10 @@
         Quality = [[CurrentKanjiInfo objectForKey:@"quality"] intValue];
         Interval = [[CurrentKanjiInfo objectForKey:@"interval"] intValue];
         EaseFactor = [[CurrentKanjiInfo objectForKey:@"easefactor"] floatValue];
-        Repetitions =[[CurrentKanjiInfo objectForKey:@"Repetitions"] intValue];
+        Repetitions =[[CurrentKanjiInfo objectForKey:@"repetitions"] intValue];
         
         Rating = (int) button.tag;
+        Quality = Rating;
         if (Rating >= 3)
         {
             switch (Repetitions)
@@ -331,7 +335,9 @@
                 NSLog(@"card updated");
             }
         }
+        
         [KanjisDueDeck removeObject:CurrentKanjiInfo];
+        [KanjisUndoDeck addObject: CurrentKanjiInfo];
         
         // NOTES(): Recycle it back in if it was given a zero rating
         if (Rating == 0)
@@ -351,11 +357,8 @@
                 [self SetNextKanji: NextKanjiInfo ];
     
                 [self HideAnswer];
-            
-         
             }
-                
-        
+            
         } else {
             [self ShowFinishedView];
         }
@@ -497,13 +500,34 @@
     
     if (isFlipped)
     {
-        NSLog(@"Touch!");
         textToVoice = [[TextToVoice alloc] initWithText:text];
         
         [textToVoice GetLink];
         
     } else {
         [self ShowAnswer:tap];
+    }
+}
+
+-(IBAction) UndoKanjiRating: (id) sender
+{
+    NSMutableDictionary *NextKanjiInfo = NULL;
+    
+    if ([KanjisUndoDeck count] > 0)
+    {
+        NSMutableDictionary *prevKanjiInfo = NULL;
+
+        prevKanjiInfo = [KanjisUndoDeck objectAtIndex:[KanjisUndoDeck count]-1];
+    
+        [KanjisDueDeck insertObject: prevKanjiInfo atIndex:0];
+    
+        [KanjisUndoDeck removeObject:prevKanjiInfo];
+        
+        NextKanjiInfo = [KanjisDueDeck objectAtIndex:0];
+
+        [self SetNextKanji: NextKanjiInfo ];
+
+        [self HideAnswer];
     }
 }
 
