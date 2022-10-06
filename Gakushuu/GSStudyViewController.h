@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KanjiDatabase.h"
-#import "GSStudyFinishedViewController.h"
+#import "GSStudyFinishedViewModal.h"
 #import "GSTextToVoice.h"
 
 NS_ASSUME_NONNULL_BEGIN

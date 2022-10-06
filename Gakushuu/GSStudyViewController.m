@@ -371,7 +371,7 @@
 -(void) ShowFinishedView
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    GSStudyFinishedViewController* StudyFinishedView = [storyboard instantiateViewControllerWithIdentifier:@"StudyFinished"];
+    GSStudyFinishedViewModal* StudyFinishedView = [storyboard instantiateViewControllerWithIdentifier:@"StudyFinished"];
     
     
     StudyFinishedView.modalPresentationStyle = UIModalPresentationPopover;

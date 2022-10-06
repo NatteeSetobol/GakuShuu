@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GSKanjiCreationViewController : UIViewController
+@interface GSKanjiCreationViewModal : UIViewController
 {
     @public int DeckId;
     @public IBOutlet UITextField *KanjField;

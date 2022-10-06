@@ -59,7 +59,7 @@
 -(IBAction) addDeck: (id) object
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    GSDeckCreationViewController* DeckCreationView = [storyboard instantiateViewControllerWithIdentifier:@"DeckCreation"];
+    GSDeckCreationViewModal* DeckCreationView = [storyboard instantiateViewControllerWithIdentifier:@"DeckCreation"];
     DeckCreationView->DeckId = -1;
     
     DeckCreationView.modalPresentationStyle = UIModalPresentationPopover;

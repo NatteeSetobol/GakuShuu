@@ -134,7 +134,7 @@
 -(void) editDeck: (id) sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    GSDeckCreationViewController* deckCreationView = [storyboard instantiateViewControllerWithIdentifier:@"DeckCreation"];
+    GSDeckCreationViewModal* deckCreationView = [storyboard instantiateViewControllerWithIdentifier:@"DeckCreation"];
     
     deckCreationView->DeckId = DeckId;
     
@@ -154,7 +154,7 @@
 -(IBAction) gotoDeckEdit: (id) sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    GSDeckEditViewController* DeckEditView = [storyboard instantiateViewControllerWithIdentifier:@"DeckEdit"];
+    GSDeckEditViewModal* DeckEditView = [storyboard instantiateViewControllerWithIdentifier:@"DeckEdit"];
     DeckEditView->DeckId = DeckId;
     
     
@@ -183,7 +183,7 @@
 
 - (IBAction)showOptions:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    GSOptionViewController* OptionViewInst = [storyboard instantiateViewControllerWithIdentifier:@"OptionView"];
+    GSOptionViewModal* OptionViewInst = [storyboard instantiateViewControllerWithIdentifier:@"OptionView"];
     OptionViewInst->DeckId = DeckId;
     
     OptionViewInst.modalPresentationStyle = UIModalPresentationPopover;

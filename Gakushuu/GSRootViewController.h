@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GSDeckCreationViewController.h"
+#import "GSDeckCreationViewModal.h"
 #import "GSDeckInfoViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN

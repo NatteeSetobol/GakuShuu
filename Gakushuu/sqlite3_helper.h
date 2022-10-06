@@ -38,7 +38,8 @@ typedef struct sql_data
 }
 
 @property (nonatomic) sqlite3* database;
-
+-(bool) RunCommand: (NSString *) command;
+-(BOOL) CreateTable: (NSMutableArray *) rows;
 + (id) GetDatabaseInstance;
 -(sqlite3_stmt*) BeginSQLQuery : (NSString*) command;
 -(NSMutableDictionary*) GetSQLNextRow: (sqlite3_stmt*) selectStatement;
@@ -57,7 +58,6 @@ typedef struct sql_data
 -(bool) Insert: (NSString *) DatabaseName Values: (NSMutableArray *) Values;
 -(bool) UpdateColumnBy: (NSString*) tableName Where: (NSString*) whereStatement Query: (NSString*) query;
 -(bool) deleteFromDatabase: (NSString*) from  Where: (NSString *) where;
-
 @end
 
 NS_ASSUME_NONNULL_END

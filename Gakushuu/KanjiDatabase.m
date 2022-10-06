@@ -112,7 +112,6 @@
     sqlite3_helper *SqlInstance = nil;
     NSString *SQLStatement = nil;
     
-    
     SqlInstance = [sqlite3_helper GetDatabaseInstance];
     
     SQLStatement = [NSString stringWithFormat:@"where id=%i", DeckID];

@@ -7,10 +7,10 @@
 
 #import <UIKit/UIKit.h>
 #import "KanjiDatabase.h"
-#import "GSDeckEditViewController.h"
-#import "GSOptionViewController.h"
+#import "GSDeckEditViewModal.h"
+#import "GSOptionViewModal.h"
 #import "GSStudyViewController.h"
-#import "GSDeckCreationViewController.h"
+#import "GSDeckCreationViewModal.h"
 #import "GSDeleteModalView.h"
 
 NS_ASSUME_NONNULL_BEGIN

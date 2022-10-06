@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/23/22.
 //
 
-#import "GSStudyFinishedViewController.h"
+#import "GSStudyFinishedViewModal.h"
 
-@interface GSStudyFinishedViewController ()
+@interface GSStudyFinishedViewModal ()
 
 @end
 
-@implementation GSStudyFinishedViewController
+@implementation GSStudyFinishedViewModal
 
 - (void)viewDidLoad {
     [super viewDidLoad];

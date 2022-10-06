@@ -64,8 +64,6 @@
         char *mainResults = NULL;
         html mainResultHtml = {};
         
-        
-        
         mainResults = GetNextElement(&mainResultHtml, "main_results", resultData, CLASS);
         
         if (mainResults)
@@ -96,7 +94,6 @@
                 trimSpaces =S32TrimSpaces(kanji);
                 kanjiNoTag = RemoveHTMLTags(trimSpaces);
                 
-                //NSLog(@"|%s|", trimSpaces);
                 nsKanji = [[NSString alloc] initWithUTF8String:kanjiNoTag];
                 
                 [dictionary setObject:nsKanji forKey:@"kanji"];
@@ -106,8 +103,6 @@
                     [dictionary setObject:results forKey:@"furigana"];
                 }
                 [dictionary setObject:[NSString stringWithUTF8String:firstMeaning]  forKey:@"meaning"];
-
-               // NSLog(@"%s", firstMeaning);
                 
                 [self.searchResult addObject:dictionary];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -201,12 +196,11 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
-    
     NSString *indexing = [[NSString alloc] initWithFormat:@"index%li", indexPath.row];
     cell = [tableView dequeueReusableCellWithIdentifier:indexing];
     UILabel *label = NULL;
     UILabel *defLabel = NULL;
-        NSMutableDictionary *arrayRow = [searchResult objectAtIndex:indexPath.row];
+    NSMutableDictionary *arrayRow = [searchResult objectAtIndex:indexPath.row];
 
     
     if (cell == nil)
@@ -215,47 +209,20 @@
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
         label.text = [arrayRow objectForKey:@"kanji"];
-        //[label setBackgroundColor:[UIColor redColor]];
         [label setTextAlignment:NSTextAlignmentCenter];
         [cell addSubview:label];
         
         
         defLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 0, cell.frame.size.width-150, 150)];
         defLabel.text = [arrayRow objectForKey:@"meaning"];
-       // [defLabel setBackgroundColor:[UIColor greenColor]];
         [defLabel setNumberOfLines:0];
         [defLabel setTextAlignment:NSTextAlignmentCenter];
         [cell addSubview:defLabel];
-        /*
-        addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
-        addButton.frame = CGRectMake(cell.frame.size.width-30 , 0, 100, 100);
-        [addButton addTarget:self action: @selector(AddToDictionary:) forControlEvents:UIControlEventTouchUpInside];
-        [addButton setTag:indexPath.row];
-        [addButton setUserInteractionEnabled:true];
-        [addButton setMultipleTouchEnabled:true];
-        [cell addSubview:addButton];
-         */
         
     }
 
     return cell;
 }
-/*
--(IBAction) AddToDictionary: (id) sender
-{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    GSKanjiCreationViewController* KanjiCreationView = [storyboard instantiateViewControllerWithIdentifier:@"KanjiCreation"];
-    
-    KanjiCreationView->DeckId = DeckId;
-    
-    KanjiCreationView.modalPresentationStyle = UIModalPresentationPopover;
-    [self presentViewController:KanjiCreationView animated:true completion:^{
-
-    }];
-    
-    
-}
- */
 
 -(NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
    
@@ -271,9 +238,7 @@
     /*
      食<span>べ</span>物屋
      */
-  //  NSLog(@"%s", furigana);
-   // NSLog(@"%s", kanji);
-    
+
     NSString *result = NULL;
 
     if (furigana)
@@ -306,7 +271,7 @@
                      } else {
                          fullFurigana = S32(furiPieces);
                      }
-                    //fullFurigana = [NSString stringWithFormat:@"%@%@", fullFurigana, [NSString stringWithCString:furiPieces encoding:NSUTF16StringEncoding] ];
+
                 } else {
                     kanjiFuriPieces = GetNextElement(&kanjiFuriPiecesHTML, "span", kanji, TAG);
                     
@@ -329,10 +294,6 @@
                             fullFurigana = S32(kanjiFuriPieces);
                         }
                     }
-                    
-                    //fullFurigana = [NSString stringWithFormat:@"%@%@", fullFurigana, [NSString stringWithCString:kanjiFuriPieces encoding:NSUTF16StringEncoding] ];
-
-                    //FreeHtml(&kanjiFuriPiecesHTML);
                 }
                 FreeHtml(&furiPiecesHTML);
                 furiPieces = GetNextElement(&furiPiecesHTML,"span", furigana, TAG);
@@ -340,7 +301,6 @@
             if (fullFurigana)
             {
                 result = [[NSString alloc] initWithUTF8String:fullFurigana];
-                //result = [NSString stringWithCString:fullFurigana encoding:NSUTF8StringEncoding];
             }
         }
     }
@@ -356,24 +316,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    GSKanjiCreationViewController* KanjiCreationView = [storyboard instantiateViewControllerWithIdentifier:@"KanjiCreation"];
+    GSKanjiCreationViewModal* KanjiCreationView = [storyboard instantiateViewControllerWithIdentifier:@"KanjiCreation"];
     NSMutableDictionary *arrayRow = [searchResult objectAtIndex:indexPath.row];
 
-    /*
-    [dictionary setObject:nsKanji forKey:@"kanji"];
-    [dictionary setObject:results forKey:@"furigana"];
-    [dictionary setObject:[NSString stringWithUTF8String:firstMeaning]  forKey:@"meaning"];
-    KanjiCreationView->DeckId = DeckId;
-    */
+
     KanjiCreationView.modalPresentationStyle = UIModalPresentationPopover;
     [self presentViewController:KanjiCreationView animated:true completion:^{
         KanjiCreationView->DeckId = self->DeckId;
         [KanjiCreationView->KanjField setText:[arrayRow objectForKey:@"kanji"]];
         [KanjiCreationView->KunField setText:[arrayRow objectForKey:@"furigana"]];
         [KanjiCreationView->DesciptionField setText:[arrayRow objectForKey:@"meaning"]];
-
-
-
     }];
 
 }

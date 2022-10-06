@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/11/22.
 //
 
-#import "GSOptionViewController.h"
+#import "GSOptionViewModal.h"
 
-@interface GSOptionViewController ()
+@interface GSOptionViewModal ()
 
 @end
 
-@implementation GSOptionViewController
+@implementation GSOptionViewModal
 
 @synthesize  OptionArray, KDatabase;
 
@@ -27,6 +27,9 @@
     _OptionTable.delegate = self;
     
     [OptionArray addObject:@"DeckOptions"];
+    [OptionArray addObject:@"TimerOptions"];
+
+    
     KDatabase = [KanjiDatabase GetInstance];
 }
 
@@ -51,7 +54,7 @@
     {
         case DECK_OPTIONS:
         {
-            return 260;
+            return 230;
             break;
         }
 
@@ -83,15 +86,15 @@
                 UILabel *DailyKanjiAdd = NULL;
                 NSMutableArray *dailyKanjiAddArray=NULL;
                 UISegmentedControl *dailyKanjiSegControl=NULL;
-                UILabel *deckTimer=NULL;
+               // UILabel *deckTimer=NULL;
                 UILabel *randomKanjiLabel=NULL;
                 UISwitch *RandomKanjiSwitch=NULL;
-                NSArray *deckTimerArray=NULL;
-                UISegmentedControl *deckTimerSegControl=NULL;
+                //NSArray *deckTimerArray=NULL;
+                //UISegmentedControl *deckTimerSegControl=NULL;
                 NSMutableArray *SavedOptionRow = NULL;
                 NSMutableDictionary *SaveOption= NULL;
                 NSNumber *KanjiPerDay;
-                NSNumber *TimerInMins;
+                //NSNumber *TimerInMins;
                 NSNumber *RandomKanji;
                 
     
@@ -101,7 +104,6 @@
                 
                 
                 KanjiPerDay = [SaveOption objectForKey:@"kanjiperday"];
-                TimerInMins = [SaveOption objectForKey:@"timerinmin"];
                 RandomKanji = [SaveOption objectForKey:@"randomkanji"];
 
                 
@@ -111,15 +113,15 @@
                 
                 dailyKanjiSegControl = [[UISegmentedControl alloc] initWithItems:dailyKanjiAddArray];
                 
-                deckTimer = [[UILabel alloc] initWithFrame:CGRectMake(15,115,self.view.frame.size.width,30)];
+               // deckTimer = [[UILabel alloc] initWithFrame:CGRectMake(15,115,self.view.frame.size.width,30)];
                 
-                deckTimerArray = [NSArray arrayWithObjects:@"Off",@"5 mins",@"10 mins", @"15 mins", @"30 mins", nil];
+              //  deckTimerArray = [NSArray arrayWithObjects:@"Off",@"5 mins",@"10 mins", @"15 mins", @"30 mins", nil];
                 
-                deckTimerSegControl = [[UISegmentedControl alloc] initWithItems:deckTimerArray];
+                //deckTimerSegControl = [[UISegmentedControl alloc] initWithItems:deckTimerArray];
                 
-                randomKanjiLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,180,self.view.frame.size.width,30)];
+                randomKanjiLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,115,self.view.frame.size.width,30)];
                 
-                RandomKanjiSwitch = [[UISwitch alloc] initWithFrame: CGRectMake(15, 210, 120, 120)];
+                RandomKanjiSwitch = [[UISwitch alloc] initWithFrame: CGRectMake(15, 145, 120, 120)];
                 
 
                 [DailyKanjiAdd setFont:[UIFont fontWithName:@"Courier" size:15]];
@@ -172,12 +174,63 @@
                 
                 [cell.contentView addSubview:dailyKanjiSegControl];
                 
+   
+                
+                [randomKanjiLabel setFont:[UIFont fontWithName:@"Courier" size:15]];
+                [randomKanjiLabel setText:@"Randomize Kanji:"];
+                [cell.contentView addSubview: randomKanjiLabel];
+                
+                if ([RandomKanji intValue] == 1)
+                {
+                    [RandomKanjiSwitch setOn: TRUE];
+                }
+                
+                
+                 [RandomKanjiSwitch addTarget:self action:@selector(RandomKanjiSwitch:) forControlEvents:UIControlEventValueChanged];
+                
+                [cell.contentView addSubview:RandomKanjiSwitch];
+                
+                [mainLabel setText:@"Deck Options"];
+                
+                
+                break;
+            }
+            case TIMER_OPTIONS:
+            {
+                UILabel *deckTimer=NULL;
+                UILabel *pauseOnAnswerLabel=NULL;
+
+                UISegmentedControl *deckTimerSegControl=NULL;
+                NSNumber *TimerInMins;
+                NSArray *deckTimerArray = NULL;
+                NSMutableArray *SavedOptionRow = NULL;
+                NSMutableDictionary *SaveOption= NULL;
+                UISwitch *pauseOnAnswerSwitch = NULL;
+    
+                SavedOptionRow = [KDatabase GetDeckOptions:DeckId];
+                SaveOption = [SavedOptionRow objectAtIndex: 0];
+
+                TimerInMins = [SaveOption objectForKey:@"timerinmin"];
+                
+                deckTimerArray = [NSArray arrayWithObjects:@"Off",@"5 mins",@"10 mins", @"15 mins", @"30 mins", nil];
+
+                deckTimer = [[UILabel alloc] initWithFrame:CGRectMake(15,45,self.view.frame.size.width,30)];
+                deckTimerSegControl = [[UISegmentedControl alloc] initWithItems:deckTimerArray];
+
                 [deckTimer setFont:[UIFont fontWithName:@"Courier" size:15]];
                 [deckTimer setText:@"Deck Timer:"];
                 [cell.contentView addSubview: deckTimer];
                 
+                pauseOnAnswerLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 125, self.view.frame.size.width,30 )];
+                [pauseOnAnswerLabel setFont:[UIFont fontWithName:@"Courier" size:15]];
+                [pauseOnAnswerLabel setText:@"Pause on Answer"];
+                [cell.contentView addSubview: pauseOnAnswerLabel];
+                
+                pauseOnAnswerSwitch = [[UISwitch alloc] initWithFrame: CGRectMake(15, 155, 120, 120)];
+                [cell.contentView addSubview:pauseOnAnswerSwitch];
 
-                deckTimerSegControl.frame = CGRectMake(15, 145, self.view.frame.size.width-20, 30);
+
+                deckTimerSegControl.frame = CGRectMake(15, 80, self.view.frame.size.width-20, 30);
                 
                 
                 switch ( [TimerInMins intValue])
@@ -215,23 +268,9 @@
                 [deckTimerSegControl addTarget:self action:@selector(TimerViewValueChanged:) forControlEvents:UIControlEventValueChanged];
                 [cell.contentView addSubview:deckTimerSegControl];
                 
-                [randomKanjiLabel setFont:[UIFont fontWithName:@"Courier" size:15]];
-                [randomKanjiLabel setText:@"Randomize Kanji:"];
-                [cell.contentView addSubview: randomKanjiLabel];
+                [mainLabel setText:@"Timer Options"];
                 
-                if ([RandomKanji intValue] == 1)
-                {
-                    [RandomKanjiSwitch setOn: TRUE];
-                }
-                
-                
-                 [RandomKanjiSwitch addTarget:self action:@selector(RandomKanjiSwitch:) forControlEvents:UIControlEventValueChanged];
-                
-                [cell.contentView addSubview:RandomKanjiSwitch];
-                
-                [mainLabel setText:@"Deck Options"];
-                
-                
+
                 break;
             }
         }

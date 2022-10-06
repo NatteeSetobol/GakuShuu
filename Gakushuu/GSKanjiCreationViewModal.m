@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/10/22.
 //
 
-#import "GSKanjiCreationViewController.h"
+#import "GSKanjiCreationViewModal.h"
 
-@interface GSKanjiCreationViewController ()
+@interface GSKanjiCreationViewModal ()
 
 @end
 
-@implementation GSKanjiCreationViewController
+@implementation GSKanjiCreationViewModal
 @synthesize KanjField, KunField, OnField, DesciptionField;
 
 - (void)viewDidLoad {

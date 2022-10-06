@@ -10,12 +10,12 @@
 		7201A97827D96635005E5F6F /* GSDeleteModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7201A97727D96635005E5F6F /* GSDeleteModalView.m */; };
 		720C2B3C27B31870006F5985 /* database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 720C2B3B27B3186F006F5985 /* database.sqlite3 */; };
 		720C602D281395D0009CA14A /* GSTextToVoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 720C602C281395D0009CA14A /* GSTextToVoice.m */; };
-		723710D927B5DA67008A679C /* GSKanjiCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */; };
+		723710D927B5DA67008A679C /* GSKanjiCreationViewModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 723710D827B5DA67008A679C /* GSKanjiCreationViewModal.m */; };
 		72437A1927BA0133003C6C11 /* GSStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72437A1827BA0133003C6C11 /* GSStudyViewController.m */; };
-		724BAB8B27C6D5BC001FFCE6 /* GSStudyFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewController.m */; };
+		724BAB8B27C6D5BC001FFCE6 /* GSStudyFinishedViewModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewModal.m */; };
 		724C1A9C282B1CEF002C942B /* GSSearchDictionaryModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 724C1A9B282B1CEF002C942B /* GSSearchDictionaryModal.m */; };
 		7253093727B455EF0076AFE4 /* GSDeckInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093627B455EF0076AFE4 /* GSDeckInfoViewController.m */; };
-		7253093A27B48D4B0076AFE4 /* GSDeckEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093927B48D4B0076AFE4 /* GSDeckEditViewController.m */; };
+		7253093A27B48D4B0076AFE4 /* GSDeckEditViewModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7253093927B48D4B0076AFE4 /* GSDeckEditViewModal.m */; };
 		72632C0C27B19D07007F21AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C0B27B19D07007F21AD /* AppDelegate.m */; };
 		72632C0F27B19D07007F21AD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C0E27B19D07007F21AD /* SceneDelegate.m */; };
 		72632C1527B19D07007F21AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72632C1327B19D07007F21AD /* Main.storyboard */; };
@@ -26,10 +26,10 @@
 		72632C3127B19D0E007F21AD /* GakushuuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C3027B19D0E007F21AD /* GakushuuUITests.m */; };
 		72632C3327B19D0E007F21AD /* GakushuuUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72632C3227B19D0E007F21AD /* GakushuuUITestsLaunchTests.m */; };
 		728C827A27B1A02C00473BE7 /* GSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827927B1A02C00473BE7 /* GSRootViewController.m */; };
-		728C827D27B1BEB900473BE7 /* GSDeckCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827C27B1BEB900473BE7 /* GSDeckCreationViewController.m */; };
+		728C827D27B1BEB900473BE7 /* GSDeckCreationViewModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827C27B1BEB900473BE7 /* GSDeckCreationViewModal.m */; };
 		728C828027B1E54A00473BE7 /* sqlite3_helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827F27B1E54A00473BE7 /* sqlite3_helper.m */; };
-		729EAD5827F500B600E0912C /* libpop2-objc in Resources */ = {isa = PBXBuildFile; fileRef = 729EAD5727F500B600E0912C /* libpop2-objc */; };
-		72B56CF727B7093F005B5C05 /* GSOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B56CF627B7093F005B5C05 /* GSOptionViewController.m */; };
+		7293EFDD28E8F062008A105F /* GSDisplayModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7293EFDC28E8F062008A105F /* GSDisplayModal.m */; };
+		72B56CF727B7093F005B5C05 /* GSOptionViewModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B56CF627B7093F005B5C05 /* GSOptionViewModal.m */; };
 		72BC8683282C900100AD3370 /* libpop in Resources */ = {isa = PBXBuildFile; fileRef = 72BC8682282C900100AD3370 /* libpop */; };
 		72BD8BDC282B1B9D00D0A28E /* KanjiDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BD8BDB282B1B9C00D0A28E /* KanjiDatabase.m */; };
 /* End PBXBuildFile section */
@@ -57,18 +57,18 @@
 		720C2B3B27B3186F006F5985 /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sqlite3; sourceTree = "<group>"; };
 		720C602B281395D0009CA14A /* GSTextToVoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSTextToVoice.h; sourceTree = "<group>"; };
 		720C602C281395D0009CA14A /* GSTextToVoice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSTextToVoice.m; sourceTree = "<group>"; };
-		723710D727B5DA67008A679C /* GSKanjiCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSKanjiCreationViewController.h; sourceTree = "<group>"; };
-		723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSKanjiCreationViewController.m; sourceTree = "<group>"; };
+		723710D727B5DA67008A679C /* GSKanjiCreationViewModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSKanjiCreationViewModal.h; sourceTree = "<group>"; };
+		723710D827B5DA67008A679C /* GSKanjiCreationViewModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSKanjiCreationViewModal.m; sourceTree = "<group>"; };
 		72437A1727BA0133003C6C11 /* GSStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSStudyViewController.h; sourceTree = "<group>"; };
 		72437A1827BA0133003C6C11 /* GSStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSStudyViewController.m; sourceTree = "<group>"; };
-		724BAB8927C6D5BB001FFCE6 /* GSStudyFinishedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSStudyFinishedViewController.h; sourceTree = "<group>"; };
-		724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSStudyFinishedViewController.m; sourceTree = "<group>"; };
+		724BAB8927C6D5BB001FFCE6 /* GSStudyFinishedViewModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSStudyFinishedViewModal.h; sourceTree = "<group>"; };
+		724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSStudyFinishedViewModal.m; sourceTree = "<group>"; };
 		724C1A9A282B1CEF002C942B /* GSSearchDictionaryModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSSearchDictionaryModal.h; sourceTree = "<group>"; };
 		724C1A9B282B1CEF002C942B /* GSSearchDictionaryModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSSearchDictionaryModal.m; sourceTree = "<group>"; };
 		7253093527B455EF0076AFE4 /* GSDeckInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeckInfoViewController.h; sourceTree = "<group>"; };
 		7253093627B455EF0076AFE4 /* GSDeckInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeckInfoViewController.m; sourceTree = "<group>"; };
-		7253093827B48D4B0076AFE4 /* GSDeckEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeckEditViewController.h; sourceTree = "<group>"; };
-		7253093927B48D4B0076AFE4 /* GSDeckEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeckEditViewController.m; sourceTree = "<group>"; };
+		7253093827B48D4B0076AFE4 /* GSDeckEditViewModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeckEditViewModal.h; sourceTree = "<group>"; };
+		7253093927B48D4B0076AFE4 /* GSDeckEditViewModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeckEditViewModal.m; sourceTree = "<group>"; };
 		72632C0727B19D07007F21AD /* Gakushuu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gakushuu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72632C0A27B19D07007F21AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72632C0B27B19D07007F21AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -86,13 +86,14 @@
 		72632C3227B19D0E007F21AD /* GakushuuUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GakushuuUITestsLaunchTests.m; sourceTree = "<group>"; };
 		728C827827B1A02C00473BE7 /* GSRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSRootViewController.h; sourceTree = "<group>"; };
 		728C827927B1A02C00473BE7 /* GSRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSRootViewController.m; sourceTree = "<group>"; };
-		728C827B27B1BEB900473BE7 /* GSDeckCreationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeckCreationViewController.h; sourceTree = "<group>"; };
-		728C827C27B1BEB900473BE7 /* GSDeckCreationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeckCreationViewController.m; sourceTree = "<group>"; };
+		728C827B27B1BEB900473BE7 /* GSDeckCreationViewModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeckCreationViewModal.h; sourceTree = "<group>"; };
+		728C827C27B1BEB900473BE7 /* GSDeckCreationViewModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeckCreationViewModal.m; sourceTree = "<group>"; };
 		728C827E27B1E54A00473BE7 /* sqlite3_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3_helper.h; sourceTree = "<group>"; };
 		728C827F27B1E54A00473BE7 /* sqlite3_helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sqlite3_helper.m; sourceTree = "<group>"; };
-		729EAD5727F500B600E0912C /* libpop2-objc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "libpop2-objc"; sourceTree = "<group>"; };
-		72B56CF527B7093F005B5C05 /* GSOptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSOptionViewController.h; sourceTree = "<group>"; };
-		72B56CF627B7093F005B5C05 /* GSOptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSOptionViewController.m; sourceTree = "<group>"; };
+		7293EFDB28E8F062008A105F /* GSDisplayModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDisplayModal.h; sourceTree = "<group>"; };
+		7293EFDC28E8F062008A105F /* GSDisplayModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDisplayModal.m; sourceTree = "<group>"; };
+		72B56CF527B7093F005B5C05 /* GSOptionViewModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSOptionViewModal.h; sourceTree = "<group>"; };
+		72B56CF627B7093F005B5C05 /* GSOptionViewModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSOptionViewModal.m; sourceTree = "<group>"; };
 		72BC8682282C900100AD3370 /* libpop */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libpop; sourceTree = "<group>"; };
 		72BD8BDA282B1B9C00D0A28E /* KanjiDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KanjiDatabase.h; sourceTree = "<group>"; };
 		72BD8BDB282B1B9C00D0A28E /* KanjiDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KanjiDatabase.m; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		72632BFE27B19D07007F21AD = {
 			isa = PBXGroup;
 			children = (
-				729EAD5727F500B600E0912C /* libpop2-objc */,
 				72632C0927B19D07007F21AD /* Gakushuu */,
 				72632C2527B19D0E007F21AD /* GakushuuTests */,
 				72632C2F27B19D0E007F21AD /* GakushuuUITests */,
@@ -157,28 +157,30 @@
 				72632C0B27B19D07007F21AD /* AppDelegate.m */,
 				720C602B281395D0009CA14A /* GSTextToVoice.h */,
 				720C602C281395D0009CA14A /* GSTextToVoice.m */,
-				724C1A9A282B1CEF002C942B /* GSSearchDictionaryModal.h */,
-				724C1A9B282B1CEF002C942B /* GSSearchDictionaryModal.m */,
 				72632C0D27B19D07007F21AD /* SceneDelegate.h */,
 				72632C0E27B19D07007F21AD /* SceneDelegate.m */,
+				724C1A9A282B1CEF002C942B /* GSSearchDictionaryModal.h */,
+				724C1A9B282B1CEF002C942B /* GSSearchDictionaryModal.m */,
 				7201A97627D96635005E5F6F /* GSDeleteModalView.h */,
 				7201A97727D96635005E5F6F /* GSDeleteModalView.m */,
-				7253093527B455EF0076AFE4 /* GSDeckInfoViewController.h */,
-				7253093627B455EF0076AFE4 /* GSDeckInfoViewController.m */,
+				728C827B27B1BEB900473BE7 /* GSDeckCreationViewModal.h */,
+				728C827C27B1BEB900473BE7 /* GSDeckCreationViewModal.m */,
+				7253093827B48D4B0076AFE4 /* GSDeckEditViewModal.h */,
+				7253093927B48D4B0076AFE4 /* GSDeckEditViewModal.m */,
+				72B56CF527B7093F005B5C05 /* GSOptionViewModal.h */,
+				72B56CF627B7093F005B5C05 /* GSOptionViewModal.m */,
+				724BAB8927C6D5BB001FFCE6 /* GSStudyFinishedViewModal.h */,
+				724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewModal.m */,
+				723710D727B5DA67008A679C /* GSKanjiCreationViewModal.h */,
+				723710D827B5DA67008A679C /* GSKanjiCreationViewModal.m */,
 				728C827827B1A02C00473BE7 /* GSRootViewController.h */,
 				728C827927B1A02C00473BE7 /* GSRootViewController.m */,
-				728C827B27B1BEB900473BE7 /* GSDeckCreationViewController.h */,
-				728C827C27B1BEB900473BE7 /* GSDeckCreationViewController.m */,
-				7253093827B48D4B0076AFE4 /* GSDeckEditViewController.h */,
-				7253093927B48D4B0076AFE4 /* GSDeckEditViewController.m */,
-				723710D727B5DA67008A679C /* GSKanjiCreationViewController.h */,
-				723710D827B5DA67008A679C /* GSKanjiCreationViewController.m */,
-				72B56CF527B7093F005B5C05 /* GSOptionViewController.h */,
-				72B56CF627B7093F005B5C05 /* GSOptionViewController.m */,
-				724BAB8927C6D5BB001FFCE6 /* GSStudyFinishedViewController.h */,
-				724BAB8A27C6D5BB001FFCE6 /* GSStudyFinishedViewController.m */,
+				7253093527B455EF0076AFE4 /* GSDeckInfoViewController.h */,
+				7253093627B455EF0076AFE4 /* GSDeckInfoViewController.m */,
 				72437A1727BA0133003C6C11 /* GSStudyViewController.h */,
 				72437A1827BA0133003C6C11 /* GSStudyViewController.m */,
+				7293EFDB28E8F062008A105F /* GSDisplayModal.h */,
+				7293EFDC28E8F062008A105F /* GSDisplayModal.m */,
 				72632C1327B19D07007F21AD /* Main.storyboard */,
 				72632C1627B19D0D007F21AD /* Assets.xcassets */,
 				72632C1B27B19D0D007F21AD /* Info.plist */,
@@ -313,7 +315,6 @@
 				72632C1A27B19D0D007F21AD /* LaunchScreen.storyboard in Resources */,
 				72632C1727B19D0D007F21AD /* Assets.xcassets in Resources */,
 				72632C1527B19D07007F21AD /* Main.storyboard in Resources */,
-				729EAD5827F500B600E0912C /* libpop2-objc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,17 +343,18 @@
 				720C602D281395D0009CA14A /* GSTextToVoice.m in Sources */,
 				7253093727B455EF0076AFE4 /* GSDeckInfoViewController.m in Sources */,
 				72632C0C27B19D07007F21AD /* AppDelegate.m in Sources */,
-				723710D927B5DA67008A679C /* GSKanjiCreationViewController.m in Sources */,
+				723710D927B5DA67008A679C /* GSKanjiCreationViewModal.m in Sources */,
 				7201A97827D96635005E5F6F /* GSDeleteModalView.m in Sources */,
-				72B56CF727B7093F005B5C05 /* GSOptionViewController.m in Sources */,
+				72B56CF727B7093F005B5C05 /* GSOptionViewModal.m in Sources */,
 				72BD8BDC282B1B9D00D0A28E /* KanjiDatabase.m in Sources */,
 				72632C1D27B19D0D007F21AD /* main.m in Sources */,
-				7253093A27B48D4B0076AFE4 /* GSDeckEditViewController.m in Sources */,
+				7253093A27B48D4B0076AFE4 /* GSDeckEditViewModal.m in Sources */,
 				72437A1927BA0133003C6C11 /* GSStudyViewController.m in Sources */,
-				728C827D27B1BEB900473BE7 /* GSDeckCreationViewController.m in Sources */,
+				7293EFDD28E8F062008A105F /* GSDisplayModal.m in Sources */,
+				728C827D27B1BEB900473BE7 /* GSDeckCreationViewModal.m in Sources */,
 				728C828027B1E54A00473BE7 /* sqlite3_helper.m in Sources */,
 				728C827A27B1A02C00473BE7 /* GSRootViewController.m in Sources */,
-				724BAB8B27C6D5BC001FFCE6 /* GSStudyFinishedViewController.m in Sources */,
+				724BAB8B27C6D5BC001FFCE6 /* GSStudyFinishedViewModal.m in Sources */,
 				72632C0F27B19D07007F21AD /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

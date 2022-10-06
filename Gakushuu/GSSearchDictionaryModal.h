@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GSKanjiCreationViewController.h"
+#import "GSKanjiCreationViewModal.h"
 #include "libpop/required/nix.hpp"
 #include "libpop/required/memory.hpp"
 #include "libpop/stringz.hpp"

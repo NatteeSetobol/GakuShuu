@@ -5,13 +5,13 @@
 //  Created by Popcorn on 2/9/22.
 //
 
-#import "GSDeckEditViewController.h"
+#import "GSDeckEditViewModal.h"
 
-@interface GSDeckEditViewController ()
+@interface GSDeckEditViewModal ()
 
 @end
 
-@implementation GSDeckEditViewController
+@implementation GSDeckEditViewModal
 
 @synthesize CardTable,Cards,KanjiCreationButton;
 
@@ -59,7 +59,7 @@
 -(IBAction) KanjiNewCreation: (id) sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    GSKanjiCreationViewController* KanjiCreationView = [storyboard instantiateViewControllerWithIdentifier:@"KanjiCreation"];
+    GSKanjiCreationViewModal* KanjiCreationView = [storyboard instantiateViewControllerWithIdentifier:@"KanjiCreation"];
     
     KanjiCreationView->DeckId = DeckId;
     
@@ -68,14 +68,6 @@
 
     }];
 }
-
-
-
-
-
-
-
-
 
 -(void) CardCreationDismissed
 {
@@ -166,6 +158,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSMutableDictionary *CardRow = NULL;
+    NSString *Kanji = NULL;
+    
+    CardRow =  [Cards objectAtIndex:indexPath.row];
+    Kanji = [CardRow objectForKey:@"kanji"];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    GSDisplayModal* displayModel = [storyboard instantiateViewControllerWithIdentifier:@"GSDisplayModal"];
+    
+    displayModel.card = CardRow;
+    
+    displayModel.modalPresentationStyle = UIModalPresentationPopover;
+    [self presentViewController:displayModel animated:true completion:^{
+    }];
     
 }
 

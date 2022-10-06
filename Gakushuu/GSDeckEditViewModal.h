@@ -7,14 +7,15 @@
 
 #import <UIKit/UIKit.h>
 #import "KanjiDatabase.h"
-#import "GSKanjiCreationViewController.h"
-#import "GSOptionViewController.h"
+#import "GSKanjiCreationViewModal.h"
+#import "GSOptionViewModal.h"
 #import "GSDeleteModalView.h"
 #import "GSSearchDictionaryModal.h"
+#import "GSDisplayModal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GSDeckEditViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface GSDeckEditViewModal : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UIBarButtonItem *addByDictionary;
     UITableView *CardTable;
