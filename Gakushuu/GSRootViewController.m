@@ -93,8 +93,7 @@
     
     if (cell == nil)
     {
-        //NSMutableDictionary *cellTitle = NULL;
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"eventCell"];        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:indexing];
     }
 
     cell.textLabel.text = Deckname;

@@ -405,10 +405,10 @@
             </objects>
             <point key="canvasLocation" x="1366.6666666666667" y="1670.7589285714284"/>
         </scene>
-        <!--Kanji Creation View Modal-->
+        <!--View Controller-->
         <scene sceneID="1am-xO-wOV">
             <objects>
-                <viewController storyboardIdentifier="KanjiCreation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aLT-VC-SJZ" customClass="GSKanjiCreationViewModal" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KanjiCreation2" id="aLT-VC-SJZ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ag-wq-FDV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -502,9 +502,6 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Create"/>
-                                                <connections>
-                                                    <action selector="CreateKanji:" destination="aLT-VC-SJZ" eventType="touchUpInside" id="VA5-SB-ay0"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -530,18 +527,40 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
-                    <connections>
-                        <outlet property="DesciptionField" destination="8j5-my-kdG" id="3IK-Oi-Mhe"/>
-                        <outlet property="KanjField" destination="cxq-Wb-32w" id="Z92-Eo-cLV"/>
-                        <outlet property="KunField" destination="OOw-TK-OMj" id="RR1-Ie-JFh"/>
-                        <outlet property="OnField" destination="oR7-gq-K5j" id="eon-tC-Ide"/>
-                        <outlet property="ScrollView" destination="eeI-au-ZzK" id="DVy-UV-Udl"/>
-                        <outlet property="StoryField" destination="EuR-cp-FxR" id="Ap5-te-qcO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bho-Kf-GVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1376" y="985.90704647676171"/>
+        </scene>
+        <!--Kanji Creation View Modal-->
+        <scene sceneID="cek-IE-MQx">
+            <objects>
+                <viewController storyboardIdentifier="KanjiCreation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vZm-z1-y7t" customClass="GSKanjiCreationViewModal" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ef9-TR-RX0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M6I-85-GfL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3bO-Se-n3F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M6I-85-GfL" firstAttribute="leading" secondItem="3bO-Se-n3F" secondAttribute="leading" id="WC0-OB-pBE"/>
+                            <constraint firstItem="M6I-85-GfL" firstAttribute="centerX" secondItem="Ef9-TR-RX0" secondAttribute="centerX" id="WPV-kO-itA"/>
+                            <constraint firstItem="M6I-85-GfL" firstAttribute="top" secondItem="3bO-Se-n3F" secondAttribute="top" id="nPJ-8e-qZi"/>
+                            <constraint firstItem="M6I-85-GfL" firstAttribute="bottom" secondItem="3bO-Se-n3F" secondAttribute="bottom" id="uxV-2P-4zX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="M6I-85-GfL" id="M6z-bt-Lh7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQH-9E-GFa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2224.6376811594205" y="800.89285714285711"/>
         </scene>
         <!--Deck Creation View Modal-->
         <scene sceneID="r64-NI-MsM">

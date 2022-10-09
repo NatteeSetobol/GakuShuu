@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     if (DeckId == -1)
     {
         [_CreateDeckButton addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
@@ -34,9 +35,12 @@
     }
     
     [_CreateCancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-    
+   
     urlField.delegate = self;
     DeckField.delegate = self;
+     /*
+
+    */
     
 }
 -(IBAction) updateDeck: (id) sender

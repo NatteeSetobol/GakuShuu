@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-@interface GSDeckCreationViewModal : UIViewController <UITextFieldDelegate>
+@interface GSDeckCreationViewModal : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     @public int DeckId;
     id selectionCallback;
@@ -22,7 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
     IBOutlet UITextField *urlField;
     IBOutlet UISwitch *isAddByLink;
     IBOutlet UILabel *errorLabel;
+    
+
 }
+
 
 @property (atomic, strong) id selectionCallback;
 @property (strong, nonatomic) IBOutlet UILabel *errorLabel;
