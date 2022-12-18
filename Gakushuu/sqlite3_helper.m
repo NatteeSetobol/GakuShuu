@@ -118,7 +118,7 @@
                 int intData = 0;
                 NSNumber *newNumber = NULL;
                 NSString *keyName  = NULL;
-                
+            
                 intData = sqlite3_column_int(statement,columnIndex);
                 newNumber = [[NSNumber alloc] initWithInt:intData];
                 
@@ -154,6 +154,7 @@
                 [results setValue:stringValue forKey:keyName];
                 break;
             }
+            
         }
     }
     return results;
@@ -311,6 +312,71 @@
  //   [self Close];
     return result;
 }
+
+-(bool) AddColumn: (NSString*) tableName ColumnName: (NSString*) columnName Query: (NSString*) columnType
+{
+    bool result = false;
+    char *select = NULL;
+    NSString *sqlStatement = NULL;
+    sqlite3_stmt *selectStatement=NULL;
+    
+    sqlStatement = [[NSString alloc] initWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ %@", tableName,columnName,columnType];
+    
+    select = (char*) [sqlStatement UTF8String];
+    sqlite3_helper *sqlhelper = [sqlite3_helper GetDatabaseInstance];
+
+    if (sqlite3_prepare_v2(sqlhelper->database, [sqlStatement UTF8String], -1, &selectStatement, NULL) == SQLITE_OK)
+    {
+        if (sqlite3_step(selectStatement) == SQLITE_DONE)
+        {
+            NSLog(@"success");
+            result = true;
+            sqlite3_finalize(selectStatement);
+        } else {
+            char *errorMsg = (char*) sqlite3_errmsg(database);
+            NSLog(@"%s", errorMsg);
+        }
+
+    } else {
+        char *errorMsg = (char*) sqlite3_errmsg(database);
+        NSLog(@"%s", errorMsg);
+    }
+ //   [self Close];
+    return result;
+}
+
+-(bool) DeleteColumn: (NSString*) tableName ColumnName: (NSString*) columnName
+{
+    bool result = false;
+    char *select = NULL;
+    NSString *sqlStatement = NULL;
+    sqlite3_stmt *selectStatement=NULL;
+    
+    sqlStatement = [[NSString alloc] initWithFormat:@"ALTER TABLE %@ DROP COLUMN %@", tableName,columnName];
+    
+    select = (char*) [sqlStatement UTF8String];
+    sqlite3_helper *sqlhelper = [sqlite3_helper GetDatabaseInstance];
+
+    if (sqlite3_prepare_v2(sqlhelper->database, [sqlStatement UTF8String], -1, &selectStatement, NULL) == SQLITE_OK)
+    {
+        if (sqlite3_step(selectStatement) == SQLITE_DONE)
+        {
+            NSLog(@"success");
+            result = true;
+            sqlite3_finalize(selectStatement);
+        } else {
+            char *errorMsg = (char*) sqlite3_errmsg(database);
+            NSLog(@"%s", errorMsg);
+        }
+
+    } else {
+        char *errorMsg = (char*) sqlite3_errmsg(database);
+        NSLog(@"%s", errorMsg);
+    }
+ //   [self Close];
+    return result;
+}
+
 
 
 -(NSMutableDictionary*) GetSQLNextRow: (sqlite3_stmt*) selectStatement

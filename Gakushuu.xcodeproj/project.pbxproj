@@ -595,7 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nomication.GakushuuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gakushuu.app/Gakushuu";
 			};
 			name = Debug;
@@ -618,7 +618,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nomication.GakushuuTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gakushuu.app/Gakushuu";
 			};
 			name = Release;

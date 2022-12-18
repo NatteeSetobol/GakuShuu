@@ -26,7 +26,11 @@
     frame.size.height = _DeckTable.frame.size.height - _ToolBar.frame.size.height - DECK_TABLE_MARGIN ;
     _DeckTable.frame = frame;
     
-
+    KanjiDatabase *KanjiDatabaseIns = NULL;
+    
+    KanjiDatabaseIns = [KanjiDatabase GetInstance];
+    
+    [KanjiDatabaseIns UpdateDatabase];
 }
 
 

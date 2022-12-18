@@ -13,7 +13,7 @@
 
 @implementation GSDeckEditViewModal
 
-@synthesize CardTable,Cards,KanjiCreationButton;
+@synthesize CardTable,Cards,KanjiCreationButton,SearchBar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +40,10 @@
      name:@"CardCreationDismissed"
      object:nil];
     
+    SearchBar.delegate = self;
+    
+    SearchResults = [[NSMutableArray alloc] init];
+    IsSearching = false;
 }
 
 -(IBAction) addByDic:(id)sender
@@ -97,22 +101,24 @@
     {
         //NSMutableDictionary *cellTitle = NULL;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"eventCell"];
+        if (IsSearching == false)
+        {
+            UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeClose];
+            deleteButton.frame = CGRectMake(cell.frame.size.width + 25, (cell.frame.size.height/2)-5,deleteButton.frame.size.width, deleteButton.frame.size.height);
+            cell.tag = [kanjiID intValue];
+            deleteButton.tag = [kanjiID intValue];
         
-        UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeClose];
-        deleteButton.frame = CGRectMake(cell.frame.size.width + 25, (cell.frame.size.height/2)-5,deleteButton.frame.size.width, deleteButton.frame.size.height);
-        cell.tag = [kanjiID intValue];
-        deleteButton.tag = [kanjiID intValue];
+            [deleteButton addTarget:self action:@selector(showDeletionView:) forControlEvents:UIControlEventTouchUpInside];
         
-        [deleteButton addTarget:self action:@selector(showDeletionView:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [cell.contentView addSubview:deleteButton];
-        
-
-        
+            [cell.contentView addSubview:deleteButton];
+        }
     }
-    cell.tag = [kanjiID intValue];
-    cell.textLabel.text = Kanji;
-
+    
+    if (IsSearching == false)
+    {
+        cell.tag = [kanjiID intValue];
+        cell.textLabel.text = Kanji;
+    }
 
     
     return cell;
@@ -138,6 +144,8 @@
          name:@"deleteCreationDismissed"
          object:nil];
     }];
+    
+    IsSearching = false;
 }
 
 -(void) deleteDismissed
@@ -147,7 +155,14 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [Cards count];
+    if (IsSearching == false)
+    {
+        return [Cards count];
+    } else {
+        return [SearchResults count];
+    }
+    
+    return 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -158,6 +173,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     NSMutableDictionary *CardRow = NULL;
     NSString *Kanji = NULL;
     
@@ -175,5 +191,25 @@
     
 }
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    IsSearching = true;
+    [CardTable reloadData];
+}
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    IsSearching = false;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    IsSearching =  false;
+    [CardTable reloadData];
+}
 @end

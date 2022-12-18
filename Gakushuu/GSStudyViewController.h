@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSTimer *sessionTimer;
     bool isTimerOn;
     bool isFlipped;
+    bool stopTimerOnAns;
     TextToVoice *textToVoice;
     
 }

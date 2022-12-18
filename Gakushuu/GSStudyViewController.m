@@ -34,6 +34,7 @@
     NSNumber* KanjiLimit=0;
     NSDateComponents* components = NULL;
     NSMutableArray *DueKanji = NULL;
+    NSNumber *timerOption = 0;
     
 
     isFlipped = false;
@@ -85,12 +86,20 @@
     
     KanjiLimit = (NSNumber*)[Options objectForKey:@"kanjiperday"];
     totalTime  = (NSNumber*)[Options objectForKey:@"timerinmin"];
+    timerOption = (NSNumber*)[Options objectForKey:@"timerpause"];
     
     if ([totalTime intValue] == 0)
     {
         isTimerOn = false;
     } else {
         isTimerOn = true;
+    }
+    
+    if ([timerOption intValue] == 0)
+    {
+        stopTimerOnAns = false;
+    } else {
+        stopTimerOnAns = true;
     }
    // [_Timer setText:[NSString stringWithFormat:@"%@:00", totalTime]];
     
@@ -189,7 +198,7 @@
             [KanjisDueDeck exchangeObjectAtIndex:randomCard1 withObjectAtIndex:randomCard2];
 
 
-            }
+        }
     }
 }
 
@@ -259,6 +268,12 @@
     int Repetitions = 0;
     int Rating = 0;
     int CardId = 0;
+    
+    if (stopTimerOnAns)
+    {
+        sessionTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerEnd:) userInfo:nil repeats:true];
+        NSLog(@"Timer start");
+    }
     
     if ([KanjisDueDeck count] > 0)
     {
@@ -408,17 +423,23 @@
     [_ButtonRatingFive setHidden:true];
     [_ButtonRatingSix setHidden:true];
     
-    
+
     doubleTapAction = [[UITapGestureRecognizer alloc] init];
     doubleTapAction.numberOfTapsRequired = 2;
     doubleTapAction.delegate = self;
     [doubleTapAction addTarget:self action:@selector(ShowAnswer:)];
     [self.view addGestureRecognizer:doubleTapAction];
     isFlipped = false;
+
 }
 
 -(id) ShowAnswer: (UIGestureRecognizer*) gesture
 {
+    if (stopTimerOnAns)
+    {
+        NSLog(@"Timer stop");
+        [sessionTimer invalidate];
+    }
     isFlipped = true;
     [_KunTagLabel setHidden:false];
     [_KunLabel setHidden:false];

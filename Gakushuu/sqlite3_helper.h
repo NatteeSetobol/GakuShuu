@@ -58,6 +58,8 @@ typedef struct sql_data
 -(bool) Insert: (NSString *) DatabaseName Values: (NSMutableArray *) Values;
 -(bool) UpdateColumnBy: (NSString*) tableName Where: (NSString*) whereStatement Query: (NSString*) query;
 -(bool) deleteFromDatabase: (NSString*) from  Where: (NSString *) where;
+-(bool) AddColumn: (NSString*) tableName ColumnName: (NSString*) columnName Query: (NSString*) columnType;
+-(bool) DeleteColumn: (NSString*) tableName ColumnName: (NSString*) columnName;
 @end
 
 NS_ASSUME_NONNULL_END

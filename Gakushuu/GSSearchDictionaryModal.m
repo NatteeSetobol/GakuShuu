@@ -32,6 +32,7 @@
 {
     [self SearchDictionary:searchBar.text];
     [SearchBar resignFirstResponder];
+    
 }
 
 - (void) SearchDictionary: (NSString *) searchQuery
@@ -43,6 +44,8 @@
     NSString *urlEncodeString = NULL;
     
     [searchResult removeAllObjects];
+    [_ResultTable reloadData];
+    
     
     urlEncodeString = [searchQuery stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
@@ -205,11 +208,12 @@
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"eventCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:indexing];
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
         label.text = [arrayRow objectForKey:@"kanji"];
         [label setTextAlignment:NSTextAlignmentCenter];
+        label.tag = 10;
         [cell addSubview:label];
         
         
@@ -217,10 +221,34 @@
         defLabel.text = [arrayRow objectForKey:@"meaning"];
         [defLabel setNumberOfLines:0];
         [defLabel setTextAlignment:NSTextAlignmentCenter];
+        defLabel.tag = 11;
         [cell addSubview:defLabel];
         
+    } else {
+        for (int i=0; i < cell.subviews.count;i++)
+        {
+            UIView *oldCell = [cell.subviews objectAtIndex:i];
+            switch(oldCell.tag)
+            {
+                case 10:
+                {
+                    UILabel *dlabel = NULL;
+                    dlabel = (UILabel*) [cell.subviews objectAtIndex:i];
+                    dlabel.text =  [arrayRow objectForKey:@"kanji"];
+                    break;
+                }
+                case 11:
+                {
+                    UILabel *dlabel = NULL;
+                    dlabel = (UILabel*) [cell.subviews objectAtIndex:i];
+                    dlabel.text = [arrayRow objectForKey:@"meaning"];
+                    
+                    break;
+                }
+            }
+        }
     }
-
+    
     return cell;
 }
 

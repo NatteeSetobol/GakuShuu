@@ -344,4 +344,18 @@
     return didDeleteFromCards;
 }
 
+-(bool) UpdateDatabase
+{
+    
+    bool result = false;
+    /*
+    sqlite3_helper *SqlInstance = nil;
+    
+    SqlInstance = [sqlite3_helper GetDatabaseInstance];
+    
+    result = [SqlInstance AddColumn:@"options" ColumnName:@"timerpause" Query:@"INTEGER"];
+    */
+    return result;
+}
+
 @end

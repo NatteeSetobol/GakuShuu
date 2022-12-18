@@ -206,11 +206,15 @@
                 NSMutableArray *SavedOptionRow = NULL;
                 NSMutableDictionary *SaveOption= NULL;
                 UISwitch *pauseOnAnswerSwitch = NULL;
+                NSNumber *timerPause = nil;
     
                 SavedOptionRow = [KDatabase GetDeckOptions:DeckId];
                 SaveOption = [SavedOptionRow objectAtIndex: 0];
 
                 TimerInMins = [SaveOption objectForKey:@"timerinmin"];
+                timerPause = [SaveOption objectForKey:@"timerpause"];
+
+                NSLog(@"%i", [timerPause intValue]);
                 
                 deckTimerArray = [NSArray arrayWithObjects:@"Off",@"5 mins",@"10 mins", @"15 mins", @"30 mins", nil];
 
@@ -226,9 +230,16 @@
                 [pauseOnAnswerLabel setText:@"Pause on Answer"];
                 [cell.contentView addSubview: pauseOnAnswerLabel];
                 
+
+                
                 pauseOnAnswerSwitch = [[UISwitch alloc] initWithFrame: CGRectMake(15, 155, 120, 120)];
+                [pauseOnAnswerSwitch addTarget:self action:@selector(PauseOnAnsSwitch:) forControlEvents:UIControlEventValueChanged];
                 [cell.contentView addSubview:pauseOnAnswerSwitch];
 
+                if ([timerPause intValue] == 1)
+                {
+                    [ pauseOnAnswerSwitch setOn: TRUE];
+                }
 
                 deckTimerSegControl.frame = CGRectMake(15, 80, self.view.frame.size.width-20, 30);
                 
@@ -385,6 +396,23 @@
     if ([KDatabase UpdateOption:DeckId Option:@"randomkanji" OptionValue:[NSString stringWithFormat:@"%i", value  ]])
     {
         NSLog(@"Option updated");
+    } else {
+        NSLog(@"Option update failed");
+    }
+}
+
+- (void) PauseOnAnsSwitch:(UISwitch *)theSwitch
+{
+    int value = 0;
+    if (theSwitch.isOn)
+    {
+        value = 1;
+    } else {
+        value = 0;
+    }
+    if ([KDatabase UpdateOption:DeckId Option:@"timerpause" OptionValue:[NSString stringWithFormat:@"%i", value  ]])
+    {
+        NSLog(@"Option timer updated");
     } else {
         NSLog(@"Option update failed");
     }
