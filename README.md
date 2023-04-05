@@ -1,7 +1,6 @@
 # GakuShuu
 
-
-Gakujuu (学習) which means "learn" or "studying" in Japanese, is a flashcard for the iOS that uses the SRS (spaced repetition system) system to help memorize Kanjis/Words. It will feature Kanji/Word from Japanese Proficiency four, three, two and one. It will also let you add and look up Kanjis/Words and add them to a deck.
+Gakujuu (学習), a Japanese word meaning "learn" or "studying," is an innovative flashcard app for iOS that utilizes the SRS (spaced repetition system) to assist with memorizing complex Kanji characters and vocabulary words. This intuitive app includes a vast collection of Kanji and vocabulary from Japanese Proficiency levels four, three, two, and one, making it ideal for both beginner and advanced learners. Additionally, users can easily add and look up Kanji and words and seamlessly integrate them into custom decks for personalized study sessions. With Gakujuu, mastering the Japanese language has never been more efficient or accessible.
 
 
 # How to compile and run
