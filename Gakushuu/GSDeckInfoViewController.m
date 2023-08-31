@@ -31,15 +31,15 @@
     int totalDue = 0;
     bool newKanji = false;
 
-
-
-    
     KanjiDatabaseIns = [KanjiDatabase GetInstance];
     Deck = [KanjiDatabaseIns GetDeck:DeckId];
     
     OptionArray = [KanjiDatabaseIns GetDeckOptions:DeckId];
-    Options = [OptionArray objectAtIndex:0];
     
+    if ([OptionArray count] > 0)
+    {
+        Options = [OptionArray objectAtIndex:0];
+    }
     KanjiLimit = (NSNumber*)[Options objectForKey:@"kanjiperday"];
     
     DeckRowOne = [Deck objectAtIndex:0];

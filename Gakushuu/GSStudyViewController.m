@@ -347,11 +347,13 @@
         {
             if ([KanjiDatabaseIns UpdateCardStatus:CardId DueDate:TomarrowString Quality:Quality Interval:Interval EaseFactor:EaseFactor Repetitions: Repetitions])
             {
-                NSLog(@"card updated");
+
             }
+            
         }
         
         [KanjisDueDeck removeObject:CurrentKanjiInfo];
+        
         [KanjisUndoDeck addObject: CurrentKanjiInfo];
         
         // NOTES(): Recycle it back in if it was given a zero rating
@@ -472,7 +474,7 @@
     if (remainingTime >= 60)
     {
         mins = remainingTime / 60;
-        secs = remainingTime- (60 * mins);
+        secs = remainingTime - (60 * mins);
     } else {
         secs = remainingTime;
         

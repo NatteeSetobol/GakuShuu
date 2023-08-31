@@ -98,6 +98,9 @@
         
         uuid = [message substringWithRange:searchRange];
         
+        NSLog(@"%@", uuid);
+
+        
         httpResponse = (NSHTTPURLResponse *) response;
         
         
@@ -108,7 +111,7 @@
         [request setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:66.0) Gecko/20100101 Firefox/66.0" forHTTPHeaderField:@"User-Agent"];
         [request setValue:@"application/json, text/plain, */*" forHTTPHeaderField:@"Accept"];
        // [request setValue:@"en-US,en;q=0." forHTTPHeaderField:@"Accept-Language"];
-        [request setValue:@"bytes=0" forHTTPHeaderField:@"Range"];
+        [request setValue:@"bytes=0-" forHTTPHeaderField:@"Range"];
         [request setValue:@"Close" forHTTPHeaderField:@"Connection"];
         [request setValue:@"Sec-Fetch-Dest" forHTTPHeaderField:@"audio"];
         [request setValue:@"Sec-Fetch-Mode" forHTTPHeaderField:@"no-cors"];
@@ -131,8 +134,10 @@
             self.player.delegate  = self;
             [self.player play];
             
+            
             if (err.description)
             {
+                NSLog(@"%s", [data bytes]);
                 NSLog(@"%@", err.description);
             } else {
                 NSLog(@"playing?");
