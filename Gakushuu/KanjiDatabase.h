@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(int) GetLastInsertedID;
 -(int) GetTotalKanjisInDeck: (int) DeckId;
 -(int) GetTotalKanjisStuided: (int) DeckId;
+-(bool) Update;
 
 @end
 

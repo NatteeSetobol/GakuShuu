@@ -479,4 +479,28 @@
    // [self Close];
     return [NSId intValue];
 }
+
+-(bool) InsertNewColumnIntoTable: (NSString*) tableName Colum: (NSString*) newColumnName Type: (NSString*) newtype
+{
+    bool result = false;
+    NSString *sqlCommand = NULL;
+    
+    sqlCommand = [[NSString alloc] initWithFormat:@"alter %@ options ADD %@ %@", tableName,newColumnName, newtype];
+    
+    result = [self RunCommand:sqlCommand];
+    
+    return result;
+}
+
+-(bool) InsertNewColumn: (NSString*) newColumnName Type: (NSString*) newtype
+{
+    bool result = false;
+    NSString *sqlCommand = NULL;
+    
+    sqlCommand = [[NSString alloc] initWithFormat:@"alter table options ADD %@ %@", newColumnName, newtype];
+    
+    result = [self RunCommand:sqlCommand];
+    
+    return result;
+}
 @end

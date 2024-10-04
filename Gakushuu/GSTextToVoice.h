@@ -17,13 +17,16 @@ enum TextToVoiceStates  { IDLE, INIT, DOWNLOADING, FINISHED, ERROR };
     NSString *text;
    @public int state;
     AVAudioPlayer *player;
+    NSString *cookie;
 }
 
+@property (retain) NSString *cookie;
 @property (retain) AVAudioPlayer *player;
 @property (retain, nonatomic) NSString *text;
 
 - (id) initWithText: (NSString *) text;
 - (void) GetLink;
+-(void) GetHomePage;
 
 @end
 

@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
     bool isTimerOn;
     bool isFlipped;
     TextToVoice *textToVoice;
+    bool pause;
     
 }
 @property bool isTimerOn;

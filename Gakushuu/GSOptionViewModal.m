@@ -28,6 +28,8 @@
     
     [OptionArray addObject:@"DeckOptions"];
     [OptionArray addObject:@"TimerOptions"];
+    [OptionArray addObject:@"ReminderOptions"];
+
 
     
     KDatabase = [KanjiDatabase GetInstance];
@@ -60,7 +62,7 @@
 
     }
     
-    return aspectRatio * [UIScreen mainScreen].bounds.size.height;
+    return 230;//aspectRatio * [UIScreen mainScreen].bounds.size.height;
 }
 
 
@@ -206,11 +208,15 @@
                 NSMutableArray *SavedOptionRow = NULL;
                 NSMutableDictionary *SaveOption= NULL;
                 UISwitch *pauseOnAnswerSwitch = NULL;
+                NSString *pauseOn = NULL;
+                
     
                 SavedOptionRow = [KDatabase GetDeckOptions:DeckId];
                 SaveOption = [SavedOptionRow objectAtIndex: 0];
 
                 TimerInMins = [SaveOption objectForKey:@"timerinmin"];
+                pauseOn = [SaveOption objectForKey:@"pause"];
+
                 
                 deckTimerArray = [NSArray arrayWithObjects:@"Off",@"5 mins",@"10 mins", @"15 mins", @"30 mins", nil];
 
@@ -227,6 +233,12 @@
                 [cell.contentView addSubview: pauseOnAnswerLabel];
                 
                 pauseOnAnswerSwitch = [[UISwitch alloc] initWithFrame: CGRectMake(15, 155, 120, 120)];
+                if ([pauseOn isEqualToString:@"true"])
+                {
+                    [pauseOnAnswerSwitch  setOn:true];
+                }
+                [pauseOnAnswerSwitch addTarget:self action:@selector(handlePauseSwitch:) forControlEvents:UIControlEventValueChanged];
+                
                 [cell.contentView addSubview:pauseOnAnswerSwitch];
 
 
@@ -273,6 +285,87 @@
 
                 break;
             }
+            case REMINDER_OPTIONS:
+            {
+                UILabel *remindMeSwitchLabel=NULL;
+                UISegmentedControl *reminderSegCtl=NULL;
+                NSArray *reminderTimeArray = NULL;
+                NSMutableArray *SavedOptionRow = NULL;
+                NSMutableDictionary *SaveOption= NULL;
+                NSNumber *reminderTime = NULL;;
+
+                
+                /*Get saved option from the database*/
+                SavedOptionRow = [KDatabase GetDeckOptions:DeckId];
+                SaveOption = [SavedOptionRow objectAtIndex: 0];
+                
+                reminderTime = [SaveOption objectForKey:@"remind"];
+                
+        
+
+                
+                /*Add Reminder label*/
+                remindMeSwitchLabel = [[UILabel alloc] initWithFrame:CGRectMake(15,45,self.view.frame.size.width,30)];
+
+                [remindMeSwitchLabel setFont:[UIFont fontWithName:@"Courier" size:15]];
+                [remindMeSwitchLabel setText:@"Remind me to study:"];
+                [cell.contentView addSubview: remindMeSwitchLabel];
+                
+                
+                reminderTimeArray = [NSArray arrayWithObjects:@"Off",@"10 mins",@"15 mins", @"30 mins", @"1 hour", nil];
+                
+                /*Add Segmentd Controller for reminder*/
+                reminderSegCtl = [[UISegmentedControl alloc] initWithItems:reminderTimeArray];
+                
+                reminderSegCtl.frame = CGRectMake(15, 80, self.view.frame.size.width-20, 30);
+                [reminderSegCtl addTarget:self action:@selector(ReminderSegmentControllCallback:) forControlEvents:UIControlEventValueChanged];
+                [cell.contentView addSubview:reminderSegCtl];
+                
+                switch ( [reminderTime intValue])
+                {
+                    case 0:
+                    {
+                        [reminderSegCtl setSelectedSegmentIndex:0];
+                        break;
+                    }
+                    case 10:
+                    {
+                        [reminderSegCtl setSelectedSegmentIndex:1];
+
+                        break;
+                    }
+                    case 15:
+                    {
+                        [reminderSegCtl setSelectedSegmentIndex:2];
+                        
+                        break;
+                    }
+                    case 30:
+                    {
+                        [reminderSegCtl setSelectedSegmentIndex:3  ];
+                        break;
+                    }
+                    case 60:
+                    {
+                        [reminderSegCtl setSelectedSegmentIndex:4  ];
+                            
+                        break;
+                    }
+                    default:
+                    {
+                        [reminderSegCtl setSelectedSegmentIndex:0  ];
+                        break;
+                    }
+                }
+                
+
+             
+                /*Set Title*/
+                [mainLabel setText:@"Reminder"];
+                
+                
+                break;
+            }
         }
         
         [cell.contentView addSubview:mainLabel];
@@ -283,6 +376,53 @@
    // cell.textLabel.text = Deckname;
 
     return cell;
+}
+
+-(IBAction)ReminderSegmentControllCallback:(UISegmentedControl *)SControl
+{
+    int savedReminder = 0;
+    
+    switch(SControl.selectedSegmentIndex)
+    {
+        case 0:
+        {
+            savedReminder = 0;
+            break;
+        }
+        case 1:
+        {
+            savedReminder  = 10;
+            break;
+        }
+        case 2:
+        {
+            savedReminder  = 15;
+
+            break;
+        }
+        case 3:
+        {
+            savedReminder  = 30;
+
+            break;
+        }
+        case 4:
+        {
+            savedReminder  = 60;
+            break;
+        }
+        default:
+        {
+            savedReminder = 0;
+            break;
+        }
+    }
+    if ([KDatabase UpdateOption:DeckId Option:@"remind" OptionValue:[NSString stringWithFormat:@"%i", savedReminder  ]])
+    {
+        NSLog(@"Option updated");
+    } else {
+        NSLog(@"Option update failed");
+    }
 }
 
 -(IBAction)TimerViewValueChanged:(UISegmentedControl *)SControl
@@ -370,6 +510,26 @@
         NSLog(@"Option updated");
     } else {
         NSLog(@"Option update failed");
+    }
+}
+
+-(IBAction) handlePauseSwitch:(UISwitch *)Swift
+{
+    if (Swift.isOn)
+    {
+        if ([KDatabase UpdateOption:DeckId Option:@"pause" OptionValue:[NSString stringWithFormat:@"\"true\""]])
+        {
+            NSLog(@"Option updated");
+        } else {
+            NSLog(@"Option update failed");
+        }
+    } else {
+        if ([KDatabase UpdateOption:DeckId Option:@"pause" OptionValue:[NSString stringWithFormat:@"\"false\""]])
+        {
+            NSLog(@"Option updated");
+        } else {
+            NSLog(@"Option update failed");
+        }
     }
 }
 

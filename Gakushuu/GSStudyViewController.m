@@ -34,6 +34,7 @@
     NSNumber* KanjiLimit=0;
     NSDateComponents* components = NULL;
     NSMutableArray *DueKanji = NULL;
+    NSString *pauseStr = NULL;
     
 
     isFlipped = false;
@@ -85,6 +86,7 @@
     
     KanjiLimit = (NSNumber*)[Options objectForKey:@"kanjiperday"];
     totalTime  = (NSNumber*)[Options objectForKey:@"timerinmin"];
+    pauseStr  = (NSString*)[Options objectForKey:@"pause"];
     
     if ([totalTime intValue] == 0)
     {
@@ -92,6 +94,14 @@
     } else {
         isTimerOn = true;
     }
+    
+    if ([pauseStr isEqualToString:@"true"])
+    {
+        pause = true;
+    } else {
+        pause = false;
+    }
+    
    // [_Timer setText:[NSString stringWithFormat:@"%@:00", totalTime]];
     
     /*
@@ -127,7 +137,6 @@
     
     if ([DeckDueDate isEqualToString:@"NULL"])
     {
-
         [self AddNewKanjis: KanjiLimit];
         [KanjiDatabaseIns UpdateDeckDueDate: DeckId DueDate: TomarrowString];
 
@@ -173,6 +182,10 @@
     }
     
     sessionTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerEnd:) userInfo:nil repeats:true];
+    
+
+
+    
 }
 
 -(void) ShuffleDeck
@@ -262,6 +275,13 @@
     
     if ([KanjisDueDeck count] > 0)
     {
+        if (pause)
+        {
+            if (sessionTimer.isValid == false)
+            {
+                sessionTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerEnd:) userInfo:nil repeats:true];
+            }
+        }
         CurrentKanjiInfo = [KanjisDueDeck objectAtIndex:0];
         
         CardId = [[CurrentKanjiInfo objectForKey:@"id"] intValue];
@@ -357,6 +377,7 @@
                 [self SetNextKanji: NextKanjiInfo ];
     
                 [self HideAnswer];
+
             }
             
         } else {
@@ -375,6 +396,7 @@
     
     
     StudyFinishedView.modalPresentationStyle = UIModalPresentationPopover;
+    StudyFinishedView->DeckId =  DeckId;
     [self presentViewController:StudyFinishedView animated:true completion:^{
         NSLog(@"testing");
     }];
@@ -415,10 +437,20 @@
     [doubleTapAction addTarget:self action:@selector(ShowAnswer:)];
     [self.view addGestureRecognizer:doubleTapAction];
     isFlipped = false;
+    
+
 }
 
 -(id) ShowAnswer: (UIGestureRecognizer*) gesture
 {
+    if (pause)
+    {
+        if (sessionTimer.isValid)
+        {
+            [sessionTimer invalidate];
+            sessionTimer=nil;
+        }
+    }
     isFlipped = true;
     [_KunTagLabel setHidden:false];
     [_KunLabel setHidden:false];
@@ -436,6 +468,7 @@
     
     [self.view removeGestureRecognizer:doubleTapAction];
     
+
     return self;
 }
 
@@ -500,12 +533,13 @@
     
     if (isFlipped)
     {
+        NSLog(@"here");
         textToVoice = [[TextToVoice alloc] initWithText:text];
-        
-        [textToVoice GetLink];
+        [textToVoice GetHomePage];
         
     } else {
         [self ShowAnswer:tap];
+
     }
 }
 

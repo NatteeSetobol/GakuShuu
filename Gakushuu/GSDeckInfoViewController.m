@@ -31,8 +31,6 @@
     int totalDue = 0;
     bool newKanji = false;
 
-
-
     
     KanjiDatabaseIns = [KanjiDatabase GetInstance];
     Deck = [KanjiDatabaseIns GetDeck:DeckId];
@@ -50,7 +48,7 @@
     DeckDueDate = [DeckRowOne objectForKey:@"nextdue"];
 
     
-   // [DeckDescription setText:DeckDesciptionString];
+    [DeckDescription setText:DeckDesciptionString];
     
     [EditDeckButton addTarget:self action:@selector(gotoDeckEdit:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -102,6 +100,25 @@
     [_totalKanjiCountLabel setText:[NSString stringWithFormat:@"%i", [KanjiDatabaseIns GetTotalKanjisInDeck:DeckId]]];
     
     [_studiedLabel setText:[NSString stringWithFormat:@"%i", [KanjiDatabaseIns GetTotalKanjisStuided:DeckId]]];
+    
+    
+    [[UNUserNotificationCenter currentNotificationCenter] getPendingNotificationRequestsWithCompletionHandler:^(NSArray<UNNotificationRequest *> * _Nonnull requests) {
+
+        // Process the pending notifications (e.g., count them)
+        NSInteger pendingCount = requests.count;
+
+        // Make sure to update the UILabel on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (pendingCount > 0)
+            {
+                [self.hasStudyLabel setText:@"You have already studied."];
+            } else {
+               [self.hasStudyLabel setText:@"You have not yet stuided"];
+            }
+            // Update the label with the number of pending notifications
+           // self.notificationLabel.text = [NSString stringWithFormat:@"Pending Notifications: %ld", (long)pendingCount];
+        });
+    }];
 
 }
 

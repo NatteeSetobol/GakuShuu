@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-enum { DECK_OPTIONS,TIMER_OPTIONS };
+enum { DECK_OPTIONS,TIMER_OPTIONS,REMINDER_OPTIONS };
 
 @interface GSOptionViewModal : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {

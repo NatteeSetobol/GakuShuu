@@ -21,9 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableArray *Deck;
     IBOutlet UIButton *EditDeckButton;
     IBOutlet UILabel *DeckDescription;
-    @public int DeckId;
+    __weak IBOutlet UILabel *hasStudyLabel;
+@public int DeckId;
 }
 @property (strong, nonatomic) IBOutlet UILabel *totalKanjiDue;
+@property (strong, nonatomic) IBOutlet UILabel *hasStudyLabel;
 @property (strong, nonatomic) IBOutlet UILabel *studiedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *totalKanjiCountLabel;
 @property (nonatomic) UIButton *EditDeckButton;

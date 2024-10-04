@@ -27,6 +27,56 @@
     return self;
 }
 
+-(void) GetHomePage
+{
+    NSURL *nsurl = NULL;
+    NSMutableURLRequest *request = NULL;
+    NSURLSession *session = NULL;
+
+    nsurl = [NSURL URLWithString:@"https://www.ibm.com/demos/live/tts-demo/self-service/home"];
+    request= [NSMutableURLRequest requestWithURL:nsurl];
+
+    [request setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:66.0) Gecko/20100101 Firefox/66.0" forHTTPHeaderField:@"User-Agent"];
+    
+    [request setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
+    
+    [request setValue:@"https://www.ibm.com/demos/live/tts-demo/self-service" forHTTPHeaderField:@"Referer"];
+    
+
+
+
+    
+    
+    session = [NSURLSession sharedSession];
+    [[session dataTaskWithRequest: request
+                 completionHandler:^(NSData *data,
+                                     NSURLResponse *response,
+                                     NSError *error) {
+        NSHTTPURLResponse *httpResponse = NULL;
+        NSDictionary *headers = NULL;
+        headers = [httpResponse allHeaderFields];
+            
+            // Retrieve all occurrences of the "Set-Cookie" header
+    
+        for (NSString *key in headers) {
+            NSLog(@"Key: %@", key);
+            // You can access the corresponding value using objectForKey:
+            id value = [headers objectForKey:key];
+            NSLog(@"Value for %@: %@", key, value);
+        }
+        
+
+        /*
+            Get the cookies.
+         */
+        //httpResponse = (NSHTTPURLResponse *)response;
+        
+        //self->cookie =[[NSString alloc] initWithString:[httpResponse valueForHTTPHeaderField:@"Set-Cookie"]];
+        
+       // [self GetLink];
+    }] resume];
+}
+
 -(void) GetLink
 {
     NSURL *nsurl = NULL;
@@ -38,7 +88,7 @@
     NSString *text = NULL;
     char* utfBody = NULL;
     
-    uuid = [[NSUUID UUID] UUIDString];;
+    uuid = [[NSUUID UUID] UUIDString];
     
     
     body = [NSString stringWithFormat:@"{\"ssmlText\":\"<prosody pitch=\\\"default\\\" rate=\\\"-0%%\\\">%@</prosody>\",\"sessionID\":\"%@\"}", self.text, uuid];
@@ -57,7 +107,7 @@
     [request setValue:[NSString stringWithFormat:@"%li", [bodyData length]] forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"https://www.ibm.com" forHTTPHeaderField:@"Origin"];
     [request setValue:@"Close" forHTTPHeaderField:@"Connection"];
-    [request setValue:@"Cookie" forHTTPHeaderField:@""];
+    [request setValue:@"Cookie" forHTTPHeaderField:self->cookie];
     [request setValue:@"Sec-Fetch-Dest" forHTTPHeaderField:@"audio"];
     [request setValue:@"Sec-Fetch-Mode" forHTTPHeaderField:@"no-cors"];
     [request setValue:@"Sec-Fetch-Site" forHTTPHeaderField:@"same-origin"];
@@ -74,6 +124,8 @@
                                      NSURLResponse *response,
                                      NSError *error) {
         
+        NSLog(@"%s", [data bytes]);
+#if 0
         NSError *jsonParsingError = NULL;
         NSDictionary *json = NULL;
         NSString *message = NULL;
@@ -114,7 +166,7 @@
         [request setValue:@"Sec-Fetch-Mode" forHTTPHeaderField:@"no-cors"];
         [request setValue:@"Sec-Fetch-Site" forHTTPHeaderField:@"same-origin"];
         [request setValue:@"trailers" forHTTPHeaderField:@"TE"];
-        [request setValue:@"Cookie" forHTTPHeaderField:cookies];
+        [request setValue:@"Cookie" forHTTPHeaderField:self->cookie];
         [request setValue:@"Refer" forHTTPHeaderField:@"https://www.ibm.com/demos/live/tts-demo/self-service/home"];
         
         request=[NSMutableURLRequest requestWithURL:nsurl];
@@ -141,7 +193,8 @@
             
         }] resume];
         
-    
+#endif
+
         
         
         

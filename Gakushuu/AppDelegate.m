@@ -20,6 +20,8 @@
     
     KanjiDatabaseInit = [KanjiDatabase GetInstance];
     
+    [KanjiDatabaseInit Update];
+    
     return YES;
 }
 
@@ -28,7 +30,15 @@
 
 
 - (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-  
+    // Request permission to display notifications
+     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+     [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+         if (!error) {
+             NSLog(@"Notification permission granted!");
+         }
+     }];
+     
+     center.delegate = self;
     return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
 }
 
@@ -36,6 +46,5 @@
 - (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
 
 }
-
 
 @end

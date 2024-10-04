@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		456C76E42AC781C7004D3C24 /* libpop in Resources */ = {isa = PBXBuildFile; fileRef = 456C76E32AC781C7004D3C24 /* libpop */; };
 		7201A97827D96635005E5F6F /* GSDeleteModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7201A97727D96635005E5F6F /* GSDeleteModalView.m */; };
 		720C2B3C27B31870006F5985 /* database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 720C2B3B27B3186F006F5985 /* database.sqlite3 */; };
 		720C602D281395D0009CA14A /* GSTextToVoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 720C602C281395D0009CA14A /* GSTextToVoice.m */; };
@@ -30,7 +31,6 @@
 		728C828027B1E54A00473BE7 /* sqlite3_helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 728C827F27B1E54A00473BE7 /* sqlite3_helper.m */; };
 		7293EFDD28E8F062008A105F /* GSDisplayModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7293EFDC28E8F062008A105F /* GSDisplayModal.m */; };
 		72B56CF727B7093F005B5C05 /* GSOptionViewModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B56CF627B7093F005B5C05 /* GSOptionViewModal.m */; };
-		72BC8683282C900100AD3370 /* libpop in Resources */ = {isa = PBXBuildFile; fileRef = 72BC8682282C900100AD3370 /* libpop */; };
 		72BD8BDC282B1B9D00D0A28E /* KanjiDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BD8BDB282B1B9C00D0A28E /* KanjiDatabase.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		456C76E32AC781C7004D3C24 /* libpop */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libpop; sourceTree = "<group>"; };
 		7201A97627D96635005E5F6F /* GSDeleteModalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSDeleteModalView.h; sourceTree = "<group>"; };
 		7201A97727D96635005E5F6F /* GSDeleteModalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDeleteModalView.m; sourceTree = "<group>"; };
 		720C2B3B27B3186F006F5985 /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sqlite3; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		7293EFDC28E8F062008A105F /* GSDisplayModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSDisplayModal.m; sourceTree = "<group>"; };
 		72B56CF527B7093F005B5C05 /* GSOptionViewModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSOptionViewModal.h; sourceTree = "<group>"; };
 		72B56CF627B7093F005B5C05 /* GSOptionViewModal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSOptionViewModal.m; sourceTree = "<group>"; };
-		72BC8682282C900100AD3370 /* libpop */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libpop; sourceTree = "<group>"; };
 		72BD8BDA282B1B9C00D0A28E /* KanjiDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KanjiDatabase.h; sourceTree = "<group>"; };
 		72BD8BDB282B1B9C00D0A28E /* KanjiDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KanjiDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,7 +147,7 @@
 		72632C0927B19D07007F21AD /* Gakushuu */ = {
 			isa = PBXGroup;
 			children = (
-				72BC8682282C900100AD3370 /* libpop */,
+				456C76E32AC781C7004D3C24 /* libpop */,
 				72BD8BDA282B1B9C00D0A28E /* KanjiDatabase.h */,
 				72BD8BDB282B1B9C00D0A28E /* KanjiDatabase.m */,
 				720C2B3B27B3186F006F5985 /* database.sqlite3 */,
@@ -310,9 +310,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72BC8683282C900100AD3370 /* libpop in Resources */,
 				720C2B3C27B31870006F5985 /* database.sqlite3 in Resources */,
 				72632C1A27B19D0D007F21AD /* LaunchScreen.storyboard in Resources */,
+				456C76E42AC781C7004D3C24 /* libpop in Resources */,
 				72632C1727B19D0D007F21AD /* Assets.xcassets in Resources */,
 				72632C1527B19D07007F21AD /* Main.storyboard in Resources */,
 			);

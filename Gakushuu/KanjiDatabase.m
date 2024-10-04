@@ -263,7 +263,7 @@
     NSString *TodayString=NULL;
     
     SqlInstance = [sqlite3_helper GetDatabaseInstance];
-    
+        
     Today = [NSDate date];
     TodayFormatter = [[NSDateFormatter alloc] init];
     [TodayFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -342,6 +342,23 @@
     didDeleteFromCards = [SqlInstance deleteFromDatabase:@"kanjis" Where: [NSString stringWithFormat:@"id=%i", ID]];
     
     return didDeleteFromCards;
+}
+
+-(bool) Update
+{
+    bool result = false;
+    bool resultInsert = false;
+    
+    sqlite3_helper *SqlInstance = nil;
+    
+    SqlInstance = [sqlite3_helper GetDatabaseInstance];
+    
+    result  = [SqlInstance InsertNewColumn:@"pause" Type:@"TEXT"];
+    resultInsert  = [SqlInstance InsertNewColumn:@"remind" Type:@"INT"];
+
+    NSLog(@"Update %i\n", resultInsert);
+    
+    return result;
 }
 
 @end
